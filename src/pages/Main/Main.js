@@ -17,7 +17,7 @@ const Main = () => {
         e.preventDefault();
         navigate("/gyms")
     }
-    
+
     return (
             <form className='main' onSubmit={ctaSubmit}>
                 <header className='main__header'>
@@ -32,7 +32,9 @@ const Main = () => {
                     <p className='main__description'>If you want to add your gym to the app, register!</p>
                     <button className='main__cta'>Find</button>
                 </footer>
+                <p>{zip}</p>
             </form>
+            
     )
 }
 
