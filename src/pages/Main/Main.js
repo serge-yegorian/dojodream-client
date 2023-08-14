@@ -1,7 +1,7 @@
 import './Main.scss';
 import { useContext } from 'react';
 import { ZipContext } from '../../App' 
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Main = () => {
 
@@ -29,10 +29,9 @@ const Main = () => {
                     </div>
                 </header>
                 <footer className='main__footer'>
-                    <p className='main__description'>If you want to add your gym to the app, register!</p>
+                    <p className='main__description'>If you want to add your gym to the app,<span className='main__link' onClick={() => {navigate('/enter')} }>register!</span></p>
                     <button className='main__cta'>Find</button>
                 </footer>
-                <p>{zip}</p>
             </form>
             
     )

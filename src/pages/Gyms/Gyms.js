@@ -8,6 +8,7 @@ const Gyms = () => {
     return (
         <section className='gyms'>
             <Header/>
+            <h1 className='gyms__heading'>Near {zip}:</h1>
             <GymCard/>
         </section>
     );

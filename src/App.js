@@ -3,13 +3,14 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { createContext, useState } from 'react';
 import Main from './pages/Main/Main.js'
 import Gyms from './pages/Gyms/Gyms';
+import Enter from './pages/Enter/Enter';
 
 export const ZipContext = createContext();
 
 
 function App() {
 
-  const [zip, setZip] = useState('null')
+  const [zip, setZip] = useState(null)
 
   return (
     <ZipContext.Provider value={{zip, setZip}}>
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/gyms' element={<Gyms/>}/>
+          <Route path='/enter' element={<Enter/>}/>
         </Routes>
       </BrowserRouter>
     </ZipContext.Provider>
