@@ -2,11 +2,8 @@ import './Enter.scss'
 import { useNavigate } from 'react-router-dom';
 import { useContext, useRef, useState } from 'react';
 import axios from 'axios';
-import { UserContext } from '../../App';
 
 const Enter = () => {
-
-    const {userId, setUserId} = useContext(UserContext)
 
     const formRef = useRef();
 
@@ -48,7 +45,6 @@ const Enter = () => {
                 console.log('great success!');
                 window.localStorage.setItem('dojodreamUserId', response.data);
                 formRef.current.reset();
-                setUserId(response.data);
                 navigate('/profile');
             })
             .catch((err) => {
