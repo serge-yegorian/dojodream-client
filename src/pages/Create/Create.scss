@@ -1,0 +1,102 @@
+@use '../../styles/styles.scss' as *;
+
+.create {
+    @include page;
+    padding-bottom: 4.5rem;
+
+    &__heading {
+        @include heading;
+        
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__input-div {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    &__input {
+        height: 2.5rem;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        width: 100%;
+        border: 2px solid $text;
+        background-color: transparent;
+        outline: none;
+        border-radius: 4px;
+        color: $text;
+        transition: 0.2s;
+        resize: none;
+    }
+
+    &__label {
+        color: $text;
+        padding: 0 0.3rem;
+        position: absolute;
+        left: 0.5rem;
+        top: 0.7rem;
+        font-size: 1rem;
+        transition: 0.2s;
+        background-color: $background;
+        cursor: text;
+    }
+
+    &__input:focus ~ &__label,
+    &__input:valid ~ &__label {
+        transform: translateY(-1.2rem);
+        font-size: 0.8rem;
+    }
+
+    &__input:focus {
+        border: 2px solid $secondaryhov;
+    }
+
+    &__input:valid {
+        border: 2px solid $primary;
+    }
+
+    &__form-section {
+        margin-top: 3rem;
+    }
+
+    &__container {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__input--textarea {
+        height: initial;
+    }
+
+    &__buttons {
+        padding: 1rem;
+        background-color: $backgroundHtml;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        }
+
+    &__button--secondary {
+        width: 20%;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 0 0.5rem;
+    }
+
+    &__button--cta {
+        @include cta;
+    }
+
+    &__button--cta:hover {
+        background-color: $primaryHover;
+    }
+}
+
+   
+

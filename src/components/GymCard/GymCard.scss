@@ -1,0 +1,48 @@
+@use '../../styles/styles.scss' as *;
+
+.gymCard {
+    margin-bottom: 2rem;
+    position: relative;
+    cursor: pointer;
+
+    &__image {
+        width: 100%;
+        transition: 0.2s;
+        border-radius: 4px;
+    }
+
+    &__heading {
+        @include heading;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+        width: fit-content;
+        color: $primary;
+        background-color: $backgroundHtml;
+    }
+
+    &__bottom{
+        visibility: hidden;
+        opacity: 0;
+        padding: 1rem;
+        position: absolute;
+        bottom: 0;
+        transition: 0.3s;
+    }
+
+    &__content:hover &__bottom {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__content:hover &__image {
+        filter: blur(4px);
+    }
+
+}
+
+.gymCard:last-of-type {
+    margin-bottom: 5rem;
+}
+

@@ -1,0 +1,19 @@
+@use '../../styles/styles.scss' as *;
+
+.profile {
+    min-height: 100dvh;
+    &__section{
+        @include page;
+        justify-content: flex-start;
+        min-height: calc(100dvh - 4.5rem)
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__heading {
+        @include heading;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,12 +1,18 @@
 import './GymCard.scss'
+import { useNavigate } from 'react-router-dom';
 
 const GymCard = (props) => {
-    const { name, bio, email, phone, street, city, state, zip, location } = props;
+
+    const navigate = useNavigate()
+    const { name, bio, email, phone, street, city, state, zip, location, _id } = props;
     return (
-        <section className='gymCard'>
-            <h1 className='gymCard__heading'>{name}</h1>
-            <p className='gymCard__bio'>bio</p>
-            <p className='gymCard__address'>{street}, {city}, {state} {zip}</p>
+        <section className='gymCard' onClick={()=>{navigate(`/gyms/${_id}`)}}>
+            <div className='gymCard__content'>
+                <img className='gymCard__image' src={require('../../assets/images/square.jpeg')}/>
+                <div className='gymCard__bottom'>
+                    <h1 className='gymCard__heading'>{name}</h1>
+                </div>
+            </div>
         </section>
     );
 }

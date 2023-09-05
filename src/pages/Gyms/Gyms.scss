@@ -1,0 +1,22 @@
+@use '../../styles/styles.scss' as *;
+
+.gyms {
+    @include page;
+    padding: 0;
+
+    &__content {
+        padding: 1rem
+    }
+
+    &__title {
+        @include title;
+    }
+
+    &__heading {
+        @include heading;
+    }
+
+    &__top {
+        padding: 1rem;
+    }
+}

@@ -1,6 +1,5 @@
 @use '../../styles/styles.scss' as *;
-
-.enter {
+.edit {
     @include page;
 
     &__title {
@@ -9,7 +8,33 @@
 
     &__heading {
         @include heading;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__description {
+        @include description;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+
+    &__nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $backgroundHtml;
+        display: flex;
+        padding: 1rem;
     }
 
     &__input-div {
@@ -28,6 +53,11 @@
         border-radius: 4px;
         color: $text;
         transition: 0.2s;
+    }
+
+    &__input--textarea {
+        resize: none;
+        height: initial;
     }
 
     &__label {
@@ -50,46 +80,7 @@
 
     &__input:valid {
         border: 2px solid $primary;
-    }
-
-    &__footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-    }
-
-    &__description-footer {
-        padding: 1rem;
-        @include description;
-    }
-
-    &__description {
-        @include description;
-    }
-
-    &__link {
-        @include link;
-    }
-
-    &__link:hover {
-        color: $secondaryhov;
-    }
-
-    &__buttons {
-        padding: 1rem;
-        background-color: $backgroundHtml;
-        display: flex;
-
-        }
-
-    &__button--secondary {
-        width: 20%;
-        margin-right: 1rem;
-        font-size: 1.2rem;
-        cursor: pointer;
-        padding: 0 0.5rem;
-    }
+    }   
 
     &__button--cta {
         @include cta;
@@ -99,4 +90,29 @@
         background-color: $primaryHover;
     }
 
+    &__buttons {
+        padding: 1rem;
+        background-color: $backgroundHtml;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        }
+
+    &__button--secondary {
+        width: 20%;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        padding: 0 0.5rem;
+    }
+}
+
+.true {
+    color: rgb(0, 201, 0);
+}
+
+.false {
+    color: rgb(255, 37, 44);
 }

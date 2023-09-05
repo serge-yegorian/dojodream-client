@@ -1,40 +1,52 @@
 import './Main.scss';
-import { useContext } from 'react';
-import { ZipContext } from '../../App' 
-import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { ZipContext } from '../../App';
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
-
-    const {zip, setZip} = useContext(ZipContext)
+    const { zip, setZip } = useContext(ZipContext);
     const navigate = useNavigate();
 
     const changeZip = (e) => {
-        setZip(e.target.value);
-        e.preventDefault()
-    }
+        const inputValue = e.target.value;
+        // Allow only numeric characters
+        if (/^\d*$/.test(inputValue) && inputValue.length <= 5) {
+            setZip(inputValue);
+            if (inputValue.length === 5) {
 
-    const ctaSubmit = (e) => {
-        e.preventDefault();
-        navigate("/gyms")
-    }
+                setTimeout(() => {
+                    navigate("/gyms");
+                }, 1000)
+
+                
+            }
+        }
+    };
 
     return (
-            <form className='main' onSubmit={ctaSubmit}>
-                <header className='main__header'>
-                    <h1 className='main__title'>Welcome to dojodream</h1>
-                    <h2 className='main__heading'>Find best martial arts gyms near you:</h2>
-                    <div className='main__input-div'>
-                        <input onChange={changeZip} type="text" minLength="5" maxLength="5" name='zip' id='zip'/>
-                        <label htmlFor="zip">Zip code:</label>
-                    </div>
-                </header>
-                <footer className='main__footer'>
-                    <p className='main__description'>If you want to add your gym to the app,<span className='main__link' onClick={() => {navigate('/enter')} }>register!</span></p>
-                    <button className='main__cta'>Find</button>
-                </footer>
-            </form>
-            
-    )
-}
+        <form className='main'>
+                <div className='main__top'>
+                    <h1 className='main__title'>dojodream</h1>
+                    <h2 className='main__heading'> Find best martial arts schools near you</h2>
+                </div>
+                <div className='main__input-div'>
+                    <label className='main__label' htmlFor='zip'>Zip Code:</label>
+                    <input
+                        className='main__input'
+                        onChange={changeZip}
+                        type="text"
+                        minLength="5"
+                        maxLength="5"
+                        name='zip'
+                        id='zip'
+                        placeholder={zip}
+                    />
+                </div>
+            <footer className='main__footer'>
+                <p className='main__description'>If you want to add your gym to the app, <span className='main__link' onClick={() => { navigate('/enter') }}>register!</span></p>
+            </footer>
+        </form>
+    );
+};
 
 export default Main;

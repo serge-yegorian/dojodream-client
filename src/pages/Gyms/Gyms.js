@@ -17,6 +17,7 @@ const Gyms = () => {
     useEffect(() => {
         axios.get(url)
         .then((response)=> {
+            console.log(response.data)
             const target = response.data.results[0].geometry.location;
             setLat(target.lat)
             setLng(target.lng)
@@ -38,10 +39,17 @@ const Gyms = () => {
     console.log(gyms)
     return (
         <section className='gyms'>
-            <h1 className='gyms__heading'>Near {zip}:</h1>
-            {gyms.map((gym) => (
-                <GymCard key={gym._id} {...gym}/>
-            ))}
+            <div className='gyms__content'>
+                <div className='gyms__top'>
+                    <h1 className='main__title'>dojodream</h1>
+                    <h2 className='gyms__heading'>Near {zip}:</h2>
+                </div>
+                <div className='gyms__array'>
+                {gyms.map((gym) => (
+                    <GymCard key={gym._id} {...gym}/>
+                ))}
+                </div>
+            </div>
             <Header/>
         </section>
     );

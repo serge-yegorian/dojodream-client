@@ -1,0 +1,93 @@
+@use '../../styles/styles.scss' as *;
+
+.addImages {
+    @include page;
+
+    &__title {
+        @include title;
+    }
+
+    &__heading {
+        @include heading;
+        margin-bottom: 0.5rem;
+    }
+
+    &__input {
+        display: none;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+
+    &__nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: $backgroundHtml;
+        display: flex;
+        padding: 1rem;
+    }
+
+    &__Imagebutton {
+        @include button;
+        width: fit-content;
+        padding: 0 2rem;
+        position: relative
+    }
+
+    &__button-div:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__button {
+        @include button;
+    }
+
+    &__button--secondary {
+        width: 100%;
+    }
+
+    &__button--secondary:hover {
+        background-color: white;
+    }
+
+    &__button--cta {
+        width: 80%;
+        @include cta
+    }
+
+    &__button--cta:hover {
+        background-color: $primaryHover;
+    }
+
+    &__Imagebutton:hover {
+        background-color: white;
+    }
+
+    &__okay {
+        width: 2.5rem;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.2s;
+        margin-left: 1rem;
+    }
+
+    &__accepted {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__button-div {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+        @include description;
+    }
+
+}

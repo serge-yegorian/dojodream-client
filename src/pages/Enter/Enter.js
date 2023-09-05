@@ -63,22 +63,23 @@ const Enter = () => {
     
     return (
         <form className='enter' ref={formRef} onSubmit={state ? register : login}>
-            <div className='enter__section'>
-                <h1 className='enter__heading'>{state ? 'Registration' : 'Login'}</h1>
+            <div className='enter__top'>
+                <h1 className='enter__title'>dojodream</h1>
+                <h2 className='enter__heading'>{state ? 'Registration' : 'Login'}</h2>
                 <div className='enter__input-div'>
-                    <input className='enter__input' type="email" id='email' name='email' onChange={changeUsername}/>
-                    <label className='enter__label' htmlFor='email'>Email</label>  
+                    <input className='enter__input' type="email" id='email' name='email' onChange={changeUsername} required/>
+                    <label className='enter__label' htmlFor='email'>Email:</label>  
                 </div>
                 <div className='enter__input-div'>
-                    <input className='enter__input' type="password" id='password' name='password' onChange={changePassword}/>
-                    <label className='enter__label' htmlFor='password'>Password</label>  
+                    <input className='enter__input' type="password" id='password' name='password' onChange={changePassword} minLength='4' required/>
+                    <label className='enter__label' htmlFor='password'>Password:</label>  
                 </div>
             </div>
-            <div className='enter__section'>
-                {state ? <p className='enter__description'>Already registered? <span onClick={toggleState} className='enter__link'>Log in!</span></p>: <p className='enter__description'>Don't have an account? <span onClick={toggleState} className='enter__link'>Register!</span></p>}
+            <div className='enter__footer'>
+                {state ? <p className='enter__description-footer'>Already registered? <span onClick={toggleState} className='enter__link'>Log in!</span></p>: <p className='enter__description-footer'>Don't have an account? <span onClick={toggleState} className='enter__link'>Register!</span></p>}
                 <div className='enter__buttons'>
-                    <button className='enter__button' type='button' onClick={() => {navigate(-1)}}>Back</button>
-                    <button className='enter__button enter__cta' type='submit'>{state ? 'Register' : 'Log in'}</button>
+                    <button className='enter__button enter__button--secondary' type='button' onClick={() => {navigate(-1)}}>Back</button>
+                    <button className='enter__button enter__button--cta' type='submit'>{state ? 'Register' : 'Log in'}</button>
                 </div>
             </div>
         </form>

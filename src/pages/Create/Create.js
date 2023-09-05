@@ -38,6 +38,7 @@ const Create = () => {
                     type: "Point",
                     coordinates: [target.lng, target.lat], // Notice the order: [longitude, latitude]
                 },
+                gymOwner: userId,
             }))
             console.log(gym)
             // send the gym
@@ -63,52 +64,65 @@ const Create = () => {
         street: '',
         city: '',
         state: '',
-        zip: ''
+        zip: '',
     })
 
     return (
         userId ? <form className='create' onSubmit={getlnglat}>
             <div className='create__content'>
-                <h1 className='create__title'>Publish Your Gym:</h1>
+                <div className='create__top'>
+                    <h1 className='create__title'>dojodream</h1>
+                    <h2 className='create__heading'>Publish Your Gym:</h2>
+                </div>
                 <div className='create__form'>
-                    <div className='create__input-div'>
-                        <input className='create__input' name='name' id='name' onChange={handleChange}/>
-                        <label htmlFor='name'>Name:</label>
+                    <div className='create__form-section'>
+                        <div className='create__input-div'>
+                            <input required minLength='3' className='create__input' name='name' id='name' onChange={handleChange}/>
+                            <label className='create__label' htmlFor='name'>Name:</label>
+                        </div>
+                        <div className='create__input-div'>
+                            <textarea required className='create__input create__input--textarea' rows='12' name='bio' id='bio' maxLength="330" onChange={handleChange}>
+                            </textarea>
+                            <label className='create__label' htmlFor='bio'>About:</label>
+                        </div>
                     </div>
-                    <div className='create__input-div'>
-                        <textarea className='create__input' name='bio' id='bio' onChange={handleChange}>
-                        </textarea>
-                        <label htmlFor='bio'>About:</label>
+                    <div className='create__form-section'>
+                        <div className='create__input-div'>
+                            <input required className='create__input' type="email" name='email' id='email' onChange={handleChange}/>
+                            <label className='create__label' htmlFor='email'>Email:</label>
+                        </div>
+                        <div className='create__input-div'>
+                            <input required className='create__input' name='phone' minLength={10} maxLength="10" id='phone' onChange={handleChange}/>
+                            <label className='create__label' htmlFor='phone'>Phone:</label>
+                        </div>
                     </div>
-                    <div className='create__input-div'>
-                        <input className='create__input' name='email' id='email' onChange={handleChange}/>
-                        <label htmlFor='email'>Email:</label>
-                    </div>
-                    <div className='create__input-div'>
-                        <input className='create__input' name='phone' id='phone' onChange={handleChange}/>
-                        <label htmlFor='phone'>Phone:</label>
-                    </div>
-                    <div className='create__input-div'>
-                        <input className='create__input' name='street' id='street' onChange={handleChange}/>
-                        <label htmlFor='street'>Street:</label>
-                    </div>
-                    <div className='create__input-div'>
-                        <input className='create__input' name='city' id='city' onChange={handleChange}/>
-                        <label htmlFor='city'>City:</label>
-                    </div>
-                    <div className='create__input-div'>
-                        <input className='create__input' name='state' id='state' onChange={handleChange}/>
-                        <label htmlFor='state'>State:</label>
-                    </div>
-                    <div className='create__input-div'>
-                        <input className='create__input' name='zip' id='zip' onChange={handleChange}/>
-                        <label htmlFor='zip'>Zip:</label>
+                    <div className='create__form-section'>
+                        <div className='create__container'>
+                            <div className='create__input-div'>
+                                <input required className='create__input' name='street' id='street' onChange={handleChange}/>
+                                <label className='create__label' htmlFor='street'>Street:</label>
+                            </div>
+                            <div className='create__input-div'>
+                                <input required className='create__input' name='city' id='city' onChange={handleChange}/>
+                                <label className='create__label' htmlFor='city'>City:</label>
+                            </div>
+                        </div>
+                        <div className='create__container'>
+                            <div className='create__input-div'>
+                                <input required className='create__input' name='state' id='state' onChange={handleChange}/>
+                                <label className='create__label' htmlFor='state'>State:</label>
+                            </div>
+                            <div className='create__input-div'>
+                                <input required className='create__input' name='zip' id='zip' minLength={5} maxLength="5" onChange={handleChange}/>
+                                <label className='create__label' htmlFor='zip'>Zip:</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <nav className='create__nav'>
-                <button className='create__back' type='button' onClick={()=>{navigate(-1)}}>Back</button>
-                <button className='create__cta' type='submit'>Add</button>
+            <nav className='create__buttons'>
+                <button className='create__button create__button--secondary' type='button' onClick={()=>{navigate(-1)}}>Back</button>
+                <button className='create__button create__button--cta' type='submit'>Add</button>
             </nav>
         </form> : ''
     );

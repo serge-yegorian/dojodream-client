@@ -1,0 +1,17 @@
+@use './styles/styles.scss' as *;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Cornerstone', sans-serif;
+}
+
+html {
+    background-color: $backgroundHtml;
+}
+
+main {
+    background-color: $background;
+    min-height: 100dvh;
+}

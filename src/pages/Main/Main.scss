@@ -1,0 +1,71 @@
+@use '../../styles/styles.scss' as *;
+
+.main {
+    @include page;
+    
+    &__title {
+        @include title;
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+
+    &__description {
+        @include description;
+    }
+
+    // &__label {
+    //     @include label
+    // }
+
+    &__input-div {
+        display: flex;
+        position: relative;
+        bottom: 5rem;
+        
+    }
+
+    &__input {
+        @include input;
+        font-size: 2rem;
+        letter-spacing: 0.5rem;
+        width: 9rem;
+        padding: 0;
+    }
+
+    &__link {
+        @include link;
+    }
+
+    &__heading {
+        @include heading
+    }
+
+    &__link:hover {
+        color: $secondaryhov;
+    }
+
+    &__input:focus ~ &__label,
+    &__input:valid ~ &__label {
+        font-size: 0.8rem;
+        transform: translateY(-1rem);
+    }
+
+    &__cta {
+        @include cta;
+        width: 20%;
+        border-radius: 0;
+    }
+
+    &__form-div {
+        display: flex;
+        border: 2px solid $primary;
+    }
+
+    &__label {
+        @include label;
+        font-size: 2rem;
+        position: static;
+        padding: 0;
+        margin-right: 1rem;
+    }
+}
