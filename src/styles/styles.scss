@@ -32,6 +32,12 @@ $font: 'NuberNext', sans-serif;
     font-family: $font;
 }
 
+@mixin subheading {
+    font-size: 1.8rem;
+    color: $text;
+    font-family: $font;
+}
+
 @mixin description {
     color: $text;
     font-family: $font;
@@ -73,13 +79,19 @@ $font: 'NuberNext', sans-serif;
     font-family: $font;
     height: 2.5rem;
     font-size: 1.2rem;
-    background-color: $primary;
+    background-color: $text;
     width: 100%;
     border: none;
     border-radius: 4px;
-    color: $text;
+    color: $backgroundHtml;
     cursor: pointer;
     transition: 0.2s;
+}
+
+@mixin ctaHover {
+    color: $text;
+    background-color: $backgroundHtml;
+    border: 2px solid $text;
 }
 
 @mixin link {
@@ -106,7 +118,7 @@ $font: 'NuberNext', sans-serif;
 //fonts
 @font-face {
     font-family:'NuberNext';
-    src: url('../assets/fonts/NuberNext.ttf');
+    src: url('../assets/fonts/Outfit-VariableFont_wght.ttf');
     font-weight: 0 1000;
     font-display: swap;
 }

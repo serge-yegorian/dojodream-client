@@ -1,0 +1,29 @@
+@use '../../styles/styles.scss' as *;
+
+.landing {
+    @include page;
+    justify-content:flex-start;
+
+    &__title {
+        @include title;
+    }
+
+    &__heading {
+        @include heading;
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+        @include description;
+        margin-bottom: 1rem
+    }
+
+    &__cta {
+        @include cta;
+    }
+
+    &__cta:hover{
+        @include ctaHover;
+    }
+
+}

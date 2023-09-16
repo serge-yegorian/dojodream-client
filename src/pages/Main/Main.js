@@ -11,12 +11,11 @@ const Main = () => {
         const inputValue = e.target.value;
         // Allow only numeric characters
         if (/^\d*$/.test(inputValue) && inputValue.length <= 5) {
-            setZip(inputValue);
             if (inputValue.length === 5) {
-
+                setZip(inputValue);
                 setTimeout(() => {
                     navigate("/gyms");
-                }, 1000)
+                }, 400)
 
                 
             }

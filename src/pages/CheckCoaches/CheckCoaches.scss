@@ -1,0 +1,28 @@
+@use '../../styles/styles.scss' as *;
+
+.check {
+
+    &__heading {
+        @include heading;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        @include title;
+    }
+
+    @include page;
+
+    &__coach {
+        margin-bottom: 2rem;
+    }
+
+    &__content {
+        padding-bottom: 5rem;
+    }
+
+    &__coach-image {
+        width: 100%;
+        border-radius: 4px;
+    }
+}

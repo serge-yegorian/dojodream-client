@@ -4,6 +4,8 @@
     @include page;
     padding: 0;
     position: relative;
+    padding-bottom: 5rem;
+
 
     &__data--hidden {
         filter: blur(8px);
@@ -19,15 +21,18 @@
 
     &__background {
         width: 100%;
-        max-height: 23rem;
         filter: grayscale(100%);
         border-radius: 4px;
+        height: 18rem;
+
     }
 
     &__logo {
         width: 8rem;
         height: 8rem;
         border-radius: 50%;
+        background-size: cover;
+        
     }
 
     &__absolute {
@@ -42,6 +47,7 @@
         background-color: hsla(0, 0%, 0%, 30%);
         padding: 2rem;
         text-align: center;
+        height: 18rem;
     }
 
     &__middle {
@@ -52,13 +58,18 @@
 
     &__title {
         @include heading;
-        color: white;
-        font-size: 1.8rem;
     }
 
     &__description {
         @include description;
         width: fit-content;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    &__description--address {
+        margin-bottom: 0.2rem;
+        margin-top: 0;
     }
 
     &__nav {
@@ -111,7 +122,7 @@
         visibility: hidden;
         opacity: 0;
         background-color: hsla(0, 0%, 100%, 0.8);
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         transition: 0.2s;
@@ -134,11 +145,13 @@
         font-size: 1.2rem;
         cursor: pointer;
         transition: 0.2s;
+        border: 2px solid $backgroundHtml;
     }
 
     &__choice:hover {
         color: $backgroundHtml;
         background-color: $text;
+        border: 2px solid $backgroundHtml;
 
     }
     
@@ -146,5 +159,162 @@
         visibility: visible;
         opacity: 1;
     }
+
+    &__choice--delete {
+        background-color: $accent;
+        margin-bottom: 2.5rem;
+        border: 2px solid $accent;
+    }
+
+    &__choice--delete:hover {
+        background-color: white;
+        border: 2px solid $accent;
+        color: $accent
+    }
+
+    &__image-div {
+        position: relative;
+    }
+
+    &__image-div--active {
+        margin-bottom: 18rem;
+    }
+
+    &__schedule {
+        width: 100%;
+        margin-top: 1rem;
+        border-radius: 4px;
+        visibility: hidden;
+        transition: 0.2s;
+        opacity: 0;
+        position: absolute;
+        transform:translateX(-20rem)
+    }
+
+    &__schedule--open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    &__show-schedule {
+        @include cta;
+        width: fit-content;
+        padding: 0 1rem;
+        color: $backgroundHtml;
+        background-color: $text;
+        border: 2px solid $text;
+    }
+
+    &__show-schedule:hover {
+        background-color: $backgroundHtml;
+        color: $text;
+    }
+
+    &__show-schedule--active {
+        background-color: $backgroundHtml;
+        color: $text;
+    }
+
+    &__subheading {
+        @include subheading;
+        margin-bottom: 1rem;
+    }
+
+    &__coach-image {
+        width: 100%;
+        background-color: $text;
+        border-bottom: 2px solid $text;
+    }
+
+    &__coaches {
+        margin-top: 2rem;
+    }
+
+    &__coach {
+        border: 2px solid $text;
+        background-color: $backgroundHtml
+    }
+
+    &__coach-description {
+        padding: 1rem;
+        background-color: $backgroundHtml
+    }
+
+    &__coach-name {
+        @include description;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    &__coach-bio {
+        @include description;
+    }
+
+    &__address-div {
+        cursor: pointer;
+    }
+
+    &__media {
+        margin-top: 2rem;
+    }
+
+    &__website {
+        @include link;
+        color: $text;
+        display: block;
+        padding: 0.5rem;
+        padding-left: 0;
+        text-decoration: none;
+        font-size: 1.4rem;
+        transition: 0.2s;
+        width: fit-content;
+    }
+
+    &__website:hover {
+        color: $primaryHover;
+    }
+
+    &__icon {
+        transition: 0.2s;
+        visibility: hidden;
+        opacity: 0;
+        margin-left: 0.5rem;
+    }
+
+    &__icon--active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__media-icon {
+        width: 2rem;
+    }
+
+    &__media-link {
+        padding: 0.5rem;
+        display: block;
+        margin-right: 0.5rem;
+    }
+
+    &__media-link:first-of-type {
+        padding-left: 0;
+    }
+
+    &__media-icon:first-of-type {
+        width: 2rem;
+    }
+
+    &__media-icons {
+        display: flex;
+    }
+
+    &__link-icon {
+        position: relative;
+        top: 5px;
+        font-size: 1.6rem;
+        margin-left: 3px;
+    }
+
 
 }

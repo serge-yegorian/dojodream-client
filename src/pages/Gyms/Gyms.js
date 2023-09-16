@@ -16,24 +16,26 @@ const Gyms = () => {
 
     useEffect(() => {
         axios.get(url)
-        .then((response)=> {
-            console.log(response.data)
-            const target = response.data.results[0].geometry.location;
-            setLat(target.lat)
-            setLng(target.lng)
-            // send lat and lng to server and get array of gyms within 20 miles
-            axios.post('http://localhost:4000/gyms/find', {lat, lng})
-            .then((response) => {
-                setGyms(response.data)
-                console.log(gyms)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+  .then((response) => {
+    const target = response.data.results[0].geometry.location;
+    setLat(target.lat);
+    setLng(target.lng);
+
+    // Now that you have valid lat and lng values, send the request to find nearby gyms
+    axios.post('http://localhost:4000/gyms/find', { lat: target.lat, lng: target.lng })
+      .then((response) => {
+        setGyms(response.data);
+        console.log(response.data);
+        console.log(gyms);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
     }, [zip])
 
     console.log(gyms)
