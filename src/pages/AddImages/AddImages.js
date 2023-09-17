@@ -100,21 +100,21 @@ const AddImages = () => {
                 <div className='addImages__button-div'>
                     <button className={`addImages__Imagebutton`} type='button' onClick={()=>{document.getElementById('logo').click()}}>Logo</button>
                     <div className={`addImages__status`}>
-                        <img className={`addImages__okay ${inputLogo? 'addImages__accepted' : ''}`} src={require('../../assets/images/check.png')} />
+                        <img alt="accepted" className={`addImages__okay ${inputLogo? 'addImages__accepted' : ''}`} src={require('../../assets/images/check.png')} />
                     </div>
                 </div>
                 <input className='addImages__input' type="file" id="background" name='background' accept=".jpg, .jpeg, .png, .gif" onChange={sendBackground}/>
                 <div className='addImages__button-div'>
                     <button className={`addImages__Imagebutton`} type='button' onClick={()=>{document.getElementById('background').click()}}>Background</button>
                     <div className='addImages__status'>
-                        <img className={`addImages__okay ${inputBackground? 'addImages__accepted' : ''}`} src={require('../../assets/images/check.png')} />
+                        <img alt="accepted"className={`addImages__okay ${inputBackground? 'addImages__accepted' : ''}`} src={require('../../assets/images/check.png')} />
                     </div>
                 </div>
                 <input className='addImages__input' type="file" id="schedule" name='schedule' accept=".jpg, .jpeg, .png, .gif" onChange={sendSchedule}/>
                 <div className='addImages__button-div'>
                     <button className={`addImages__Imagebutton`} type='button' onClick={()=>{document.getElementById('schedule').click()}}>Schedule</button>
                     <div className='addImages__status'>
-                        <img className={`addImages__okay ${inputSchedule? 'addImages__accepted' : ''}`} src={require('../../assets/images/check.png')} />
+                        <img alt="accepted"className={`addImages__okay ${inputSchedule? 'addImages__accepted' : ''}`} src={require('../../assets/images/check.png')} />
                     </div>
                 </div>
             </div>

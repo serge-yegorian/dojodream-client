@@ -80,7 +80,7 @@ const CreateCoach = () => {
                 <input className='addImages__input' type="file" id="image" name='image' accept=".jpg, .jpeg, .png, .gif" onChange={chooseImage}/>
                     <button className={`addImages__Imagebutton`} type='button' onClick={()=>{document.getElementById('image').click()}}>Image</button>
                     <div className='addImages__status'>
-                        <img className={`addImages__okay ${image? 'addImages__accepted' : ''}`} src={require('../../assets/images/check.png')} />
+                        <img alt="accepted"className={`addImages__okay ${image? 'addImages__accepted' : ''}`} src={require('../../assets/images/check.png')} />
                     </div>
                 </div>
             </div>

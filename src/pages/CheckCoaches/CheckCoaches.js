@@ -39,7 +39,7 @@ const CheckCoaches = () => {
                 {coaches.map((coach)=>(
                     <div className='check__coach' key={coach._id} onClick={()=>{navigate(`/coaches/${coach._id}`)}}>
                         <h3 className='check__coach-name'>{coach.name}</h3>
-                        <img className='check__coach-image' src={coach.image.url}/>
+                        <img alt="image of a coach"className='check__coach-image' src={coach.image.url}/>
                     </div>
                 ))}
             </div>

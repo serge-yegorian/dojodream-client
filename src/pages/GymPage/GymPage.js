@@ -114,7 +114,7 @@ const GymPage = () => {
         <section className='gym'>
             <div className='gym__data'>
                 <div className='gym__top'>
-                    <img className='gym__background' src={gymData.background? gymData.background.url : require('../../assets/images/square.jpeg')}/>
+                    <img alt="background" className='gym__background' src={gymData.background? gymData.background.url : require('../../assets/images/square.jpeg')}/>
                     <div className='gym__absolute'>
                         <div className='gym__middle'>
                             <div className='gym__logo' style={{ backgroundImage: `url(${gymData.logo? gymData.logo.url : '../../assets/images/logo-type.png'})` }}></div>
@@ -130,17 +130,17 @@ const GymPage = () => {
                     </div>
                     <p className='gym__description'>{gymData.bio}</p>
                     {gymData.schedule && <button type='button' onClick={toggleSchedule} className='gym__show-schedule'>Schedule</button>}
-                    {gymData.schedule && <div className='gym__image-div'><img className='gym__schedule' src={gymData.schedule.url} /></div>}
+                    {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.url} /></div>}
                     { gymData.insta || gymData.facebook || gymData.website ?
                         <div className='gym__media'>
                         <h3 className='gym__subheading'>Social Media:</h3>
                         <div className='gym__media-content'>
                             {gymData.website && <a href={gymData.website} target="_blank" className="gym__website">Website<BsLink45Deg className='gym__link-icon'/></a>}
                             <div className='gym__media-icons'>
-                                {gymData.insta && <a href={gymData.insta} target="_blank" className="gym__media-link"><img className='gym__media-icon' src={require('../../assets/images/insta.png')}/></a>}
-                                {gymData.facebook && <a href={gymData.insta} target="_blank" className="gym__media-link"><img className='gym__media-icon' src={require('../../assets/images/facebook.png')}/></a>}
-                                {gymData.smoothcomp && <a href={gymData.smoothcomp} target="_blank" className="gym__media-link"><img className='gym__media-icon' src={require('../../assets/images/smoothcomp.png')}/></a>}
-                                {gymData.tapology && <a href={gymData.tapology} target="_blank" className="gym__media-link"><img className='gym__media-icon' src={require('../../assets/images/tapology.png')}/></a>}
+                                {gymData.insta && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="insta" className='gym__media-icon' src={require('../../assets/images/insta.png')}/></a>}
+                                {gymData.facebook && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="facebook" className='gym__media-icon' src={require('../../assets/images/facebook.png')}/></a>}
+                                {gymData.smoothcomp && <a href={gymData.smoothcomp} target="_blank" className="gym__media-link"><img alt="smoothcomp" className='gym__media-icon' src={require('../../assets/images/smoothcomp.png')}/></a>}
+                                {gymData.tapology && <a href={gymData.tapology} target="_blank" className="gym__media-link"><img alt="tapology" className='gym__media-icon' src={require('../../assets/images/tapology.png')}/></a>}
                             </div>
                         </div>
                     </div> : ''
@@ -149,7 +149,7 @@ const GymPage = () => {
                         <div className='gym__coaches'>
                             <h2 className='gym__subheading'>Coaches:</h2>
                             <div className='gym__coach'>
-                                <img className='gym__coach-image' src={coach.image.url}/>
+                                <img alt="coach" className='gym__coach-image' src={coach.image.url}/>
                                 <div className='gym__coach-description'>
                                     <p className='gym__coach-name'>{coach.name}</p>
                                     <p className='gym__coach-bio'>{coach.bio}</p>
