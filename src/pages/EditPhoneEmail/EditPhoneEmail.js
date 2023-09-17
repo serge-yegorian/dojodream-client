@@ -11,7 +11,7 @@ const EditPhoneEmail = () => {
     const [email, setEmail] = useState('');
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/gyms/${gymAddress}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/${gymAddress}`)
             .then((response) => {
                 setPhone(response.data.phone);
                 setEmail(response.data.email);
@@ -25,7 +25,7 @@ const EditPhoneEmail = () => {
 
     const saveChanges = (e) => {
         e.preventDefault()
-        axios.post(`http://localhost:4000/gyms/editphoneandemail`, {phone, email, gymAddress})
+        axios.post(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/editphoneandemail`, {phone, email, gymAddress})
         .then((res)=>{
             console.log(res)
             alert('Changes Saved Succesfully!')

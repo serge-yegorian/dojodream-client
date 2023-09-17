@@ -16,7 +16,7 @@ const CreateCoach = () => {
     const [smoothcomp, setSmoothcomp] = useState('');
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/gyms/${gymAddress}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/${gymAddress}`)
             .then((response) => {
                 console.log(response.data)
             })
@@ -41,7 +41,7 @@ const CreateCoach = () => {
         if (image) {
             formData.append("image", image);
         }
-        axios.post(`http://localhost:4000/coaches/newcoach`, formData)
+        axios.post(`https://king-prawn-app-9vmwa.ondigitalocean.app/coaches/newcoach`, formData)
         .then((res)=>{
             console.log(res)
             alert('Changes Saved Succesfully!')

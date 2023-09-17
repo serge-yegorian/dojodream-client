@@ -9,7 +9,7 @@ const Create = () => {
     const id = localStorage.dojodreamUserId
 
     useEffect(() => {
-        axios.post('http://localhost:4000/users/profile', {id})
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/users/profile', {id})
         .then((response) => {
           setUserId(response.data.id);
         }).catch((err) => {
@@ -42,7 +42,7 @@ const Create = () => {
             }))
             console.log(gym)
             // send the gym
-            axios.post('http://localhost:4000/gyms/creategym', gym)
+            axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/creategym', gym)
             .then((res) =>{
                 const gymAddress = res.data._id;
                 navigate(`/gyms/${gymAddress}`)

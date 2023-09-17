@@ -1,5 +1,5 @@
 import './Main.scss';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { ZipContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 

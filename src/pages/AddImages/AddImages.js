@@ -15,7 +15,7 @@ const AddImages = () => {
     const [inputSchedule, setInputSchedule] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/gyms/${gymAddress}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/${gymAddress}`)
             .then((response) => {
                 response.data.logo && setLogoPublicId(response.data.logo.public_id);
                 response.data.background && setBackgroundPublicId(response.data.background.public_id);
@@ -38,7 +38,7 @@ const AddImages = () => {
         formData.append("gymAddress", gymAddress);
         formData.append("logoPublicId", logoPublicId)
         formData.append("upload_preset", "ml_default");
-        axios.post('http://localhost:4000/gyms/uploadLogo/', formData)
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/uploadLogo/', formData)
         .then((res) => {
             console.log(res)
             setLogoPublicId(res.data.logo.public_id)
@@ -57,7 +57,7 @@ const AddImages = () => {
         formData.append("gymAddress", gymAddress);
         formData.append("backgroundPublicId", backgroundPublicId)
         formData.append("upload_preset", "ml_default");
-        axios.post('http://localhost:4000/gyms/uploadBackground/', formData)
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/uploadBackground/', formData)
         .then((res) => {
             console.log(res)
             setBackgroundPublicId(res.data.background.public_id)
@@ -76,7 +76,7 @@ const AddImages = () => {
         formData.append("gymAddress", gymAddress);
         formData.append("schedulePublicId", schedulePublicId)
         formData.append("upload_preset", "ml_default");
-        axios.post('http://localhost:4000/gyms/uploadSchedule/', formData)
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/uploadSchedule/', formData)
         .then((res) => {
             console.log(res)
             setSchedulePublicId(res.data.schedule.public_id)

@@ -1,8 +1,10 @@
 import './Landing.scss';
 import { BiLinkExternal } from "react-icons/bi";
+import { useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
+    const navigate = useNavigate()
     return (
         <section className='landing'>
             <div className='landing__top'>
@@ -11,7 +13,7 @@ const Landing = () => {
             </div>
             <div className='landing__section'>
                 <p className='landing__description'>Find martial arts gyms around you within one click. Find info about gym's coaches, schedule, membership cost and more...</p>
-                <button className='landing__cta'>Try dojodream <BiLinkExternal/></button>
+                <button className='landing__cta' onClick={()=>{navigate('/main')}}>Try dojodream <BiLinkExternal/></button>
             </div>
         </section>
     );

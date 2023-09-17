@@ -15,7 +15,7 @@ const AddLinks = () => {
 
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/gyms/${gymAddress}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/${gymAddress}`)
             .then((response) => {
                 console.log(response.data)
                 setWebsite(response.data.website);
@@ -32,7 +32,7 @@ const AddLinks = () => {
 
     const saveChanges = (e) => {
         e.preventDefault()
-        axios.post(`http://localhost:4000/gyms/addlinks`, {website, insta, facebook, smoothcomp, tapology, gymAddress})
+        axios.post(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/addlinks`, {website, insta, facebook, smoothcomp, tapology, gymAddress})
         .then((res)=>{
             console.log(res)
             alert('Changes Saved Succesfully!')

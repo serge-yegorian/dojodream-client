@@ -22,7 +22,7 @@ const Gyms = () => {
     setLng(target.lng);
 
     // Now that you have valid lat and lng values, send the request to find nearby gyms
-    axios.post('http://localhost:4000/gyms/find', { lat: target.lat, lng: target.lng })
+    axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/find', { lat: target.lat, lng: target.lng })
       .then((response) => {
         setGyms(response.data);
         console.log(response.data);

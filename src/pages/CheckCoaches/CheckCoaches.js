@@ -10,11 +10,11 @@ const CheckCoaches = () => {
     const [coaches, setCoaches] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/gyms/${gymAddress}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/${gymAddress}`)
             .then((response) => {
                 console.log(response.data);
                 const coachIds = (response.data.coaches);
-                coachIds && axios.post(`http://localhost:4000/coaches/findcoaches`, coachIds)
+                coachIds && axios.post(`https://king-prawn-app-9vmwa.ondigitalocean.app/coaches/findcoaches`, coachIds)
                 .then((res)=>{
                     setCoaches(res.data)
                 })

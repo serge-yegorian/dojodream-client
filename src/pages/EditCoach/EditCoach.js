@@ -18,7 +18,7 @@ const AddCoaches = () => {
     const [publicId, setPublicId] = useState(null);
     // ADD DEFAULT VALUES AS DEFAULT VALUES FROM AXIOS
     useEffect(()=>{
-        axios.get(`http://localhost:4000/coaches/${coachId}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/coaches/${coachId}`)
             .then((response) => {
                 console.log(response.data);
                     setName(response.data.name);
@@ -52,7 +52,7 @@ const AddCoaches = () => {
         if (image) {
             formData.append("image", image);
         }
-        axios.post(`http://localhost:4000/coaches/updatecoach`, formData)
+        axios.post(`https://king-prawn-app-9vmwa.ondigitalocean.app/coaches/updatecoach`, formData)
         .then((res)=>{
             console.log(res)
             alert('Changes Saved Succesfully!')
@@ -72,7 +72,7 @@ const AddCoaches = () => {
 
     const deleteCoach = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/coaches/deletecoach', {coachId})
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/coaches/deletecoach', {coachId})
         .then((res)=>{
             console.log(res)
             alert('Deleted Successfully!')

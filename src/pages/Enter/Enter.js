@@ -27,7 +27,7 @@ const Enter = () => {
     const register = (e) => {
         e.preventDefault();
         //send username and password
-        axios.post('http://localhost:4000/users/register', {username, password})
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/users/register', {username, password})
         .then(() => {
 
         })
@@ -40,7 +40,7 @@ const Enter = () => {
     // login function
     const login = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/users/login', { username, password })
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/users/login', { username, password })
             .then((response) => {
                 console.log('great success!');
                 window.localStorage.setItem('dojodreamUserId', response.data);

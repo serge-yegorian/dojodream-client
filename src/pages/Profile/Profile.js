@@ -15,13 +15,13 @@ const Profile = () => {
     console.log(id)
 
     useEffect(() => {
-        axios.post('http://localhost:4000/users/profile', {id})
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/users/profile', {id})
         .then((response) => {
           setUserId(response.data.id)
           console.log(response.data)
           console.log(userId)
           console.log(userId)
-          axios.get('http://localhost:4000/gyms/mygyms/' + response.data.id)
+          axios.get('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/mygyms/' + response.data.id)
           .then((res)=>{
             setGyms(res.data)
           })

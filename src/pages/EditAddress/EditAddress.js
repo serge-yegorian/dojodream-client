@@ -14,7 +14,7 @@ const EditAddress = () => {
     const [zip, setZip] = useState('');
     
     useEffect(()=>{
-        axios.get(`http://localhost:4000/gyms/${gymAddress}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/${gymAddress}`)
             .then((response) => {
                 console.log(response.data);
                 setState(response.data.state);
@@ -37,7 +37,7 @@ const EditAddress = () => {
         .then((response)=>{
             const target = response.data.results[0].geometry.location;
             console.log(target);
-            axios.post('http://localhost:4000/gyms/editaddress', {gymAddress, state, street, city, zip, location: {
+            axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/editaddress', {gymAddress, state, street, city, zip, location: {
                 type: "Point",
                 coordinates: [target.lng, target.lat],
             }})

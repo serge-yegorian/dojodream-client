@@ -11,7 +11,7 @@ const EditNameBio = () => {
     const [bio, setBio] = useState('');
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/gyms/${gymAddress}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/${gymAddress}`)
             .then((response) => {
                 setName(response.data.name);
                 setBio(response.data.bio);
@@ -26,7 +26,7 @@ const EditNameBio = () => {
     const saveChanges = (e) => {
         e.preventDefault()
         console.log(name, bio)
-        axios.post(`http://localhost:4000/gyms/editnameandbio`, {name, bio, gymAddress})
+        axios.post(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/editnameandbio`, {name, bio, gymAddress})
         .then((res)=>{
             console.log(res)
             alert('Changes Saved Succesfully!')

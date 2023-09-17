@@ -18,13 +18,13 @@ const GymPage = () => {
     const gymAddress = useParams().id
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/gyms/${gymAddress}`)
+        axios.get(`https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/${gymAddress}`)
             .then((response) => {
                 setGymData(response.data);
                 if (response.data.logo){setPublicId(response.data.logo.public_id)};
                 console.log(response.data);
                 const coachIds = (response.data.coaches);
-                coachIds && axios.post(`http://localhost:4000/coaches/findcoaches`, coachIds)
+                coachIds && axios.post(`https://king-prawn-app-9vmwa.ondigitalocean.app/coaches/findcoaches`, coachIds)
                 .then((res)=>{
                     setCoaches(res.data)
                 })
@@ -98,7 +98,7 @@ const GymPage = () => {
 
     const deleteGym = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/gyms/deletegym', {gymAddress})
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/deletegym', {gymAddress})
         .then((res)=>{
             console.log(res)
             alert('Deleted Successfully!')
