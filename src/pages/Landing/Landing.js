@@ -76,7 +76,28 @@ const Landing = () => {
             Find new students by registering your gym on the app. Support the community together with us!</p>
             <a href="/main" target="_blank" className='landing__cta'>Try dojodream <BiLinkExternal/></a>
             </section>
+            <footer className='landing__footer'>
+                <div className='landing__footer-section'>
+                    <div className='landing__footer-icon-div'>
+                        <img className='landing__footer-icon' alt='insta' src={require('../../assets/images/insta.png')}/>
+                    </div>
+                    <div className='landing__footer-icon-div'>
+                        <img className='landing__footer-icon' alt='facebook' src={require('../../assets/images/facebook.png')}/>
+                    </div>
+                    <div className='landing__footer-icon-div'>
+                        <img className='landing__footer-icon' alt='linkedin' src={require('../../assets/images/linkedin.png')}/>
+                    </div>
+                    <div className='landing__footer-icon-div'>
+                        <img className='landing__footer-icon' alt='x' src={require('../../assets/images/x.com.png')}/>
+                    </div>
+                </div>
+                <div className='landing__footer-section'>
+                    <img src={require('../../assets/images/codingdojo.png')} alt='logo' className='landing__footer-image'/>
+                    <p className='landing__substring landing__substring--footer'><div>© 2008 - 2023 dojodream.<br/> All rights reserved.</div></p>
+                </div>
+            </footer>
         </section>
+        
     );
 }
 

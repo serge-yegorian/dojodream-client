@@ -143,4 +143,54 @@
         @include ctaHover;
     }
 
+    &__footer {
+        padding: 1rem;
+        background-color: $backgroundHtml;
+    }
+
+    &__footer-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    &__footer-icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__footer-icon-div {
+        padding: 0.5rem;
+        border: 1px solid white;
+        border-radius: 8px;
+        width: 2.5rem;
+        height: 2.5rem;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    &__footer-icon-div:hover {
+        background-color: $secondaryhov;
+        border: 1px solid $secondaryhov;
+    
+    }
+
+    &__footer-image {
+        width: 100%;
+        background-color: $white;
+        padding: 1rem;
+        border-radius: 14px;
+        margin-bottom: 1rem;
+    }
+
+    &__substring--footer {
+        color: $white;
+        text-align: center;
+        line-height: 1.5rem;
+    }
+
+    &__footer-section:last-of-type {
+        flex-direction: column;
+    }
+
 }
