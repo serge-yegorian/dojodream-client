@@ -1,10 +1,8 @@
 import './Landing.scss';
 import { BiLinkExternal } from "react-icons/bi";
-import { useNavigate } from 'react-router-dom';
 
 
 const Landing = () => {
-    const navigate = useNavigate()
     return (
         <section className='landing'>
             <section className='landing__section landing__section--main'>
@@ -16,14 +14,16 @@ const Landing = () => {
                     <h2 className='landing__heading landing__heading--main'> Find a dream dojo</h2>
                     <p className='landing__description'>Find martial arts gyms around you within one click. Learn about gym's senseis, schedule, membership cost and more...<br/><br/>
                     Team of designers and engineers made it possible to compare local dojos and find the best martial arts environment near you.</p>
-                    <button className='landing__cta' onClick={()=>{navigate('/main')}}>Try dojodream <BiLinkExternal/></button>
+                    <a href="/main" target="_blank" className='landing__cta'>Try dojodream  <BiLinkExternal/></a>
                 </div>
             </section>
             <section className='landing__section'>
                 <h2 className='landing__heading'>Our Mission</h2>
-                <p className='landing__description'>Fill martial arts gyms with loyal nonjas. Imporve society by lowering the number of bullies and increasing population's ability to self-defend.<br/><br/>
-                Give your children a hobby worth investing their time. We make it easy to start physical and spiritual development for masses.
-                </p>
+                <p className='landing__description'>At dojodream we connect enthusiasts with dojos in their own territories.</p>
+                <p className='landing__description'>We're the silent bridge, uniting ninjutsu seekers with enlightening dojos, helping warriors embrace their potential.</p>
+                <p className='landing__description'>For dojo senseis, we provide tools to expand their reach and make a mark on the world.</p>
+                <p className='landing__description'>Dojodream offers paths to martial enlightenment, combating bullying, and ensuring safety.</p>
+                <p className='landing__description'>Give your descendants a worthy legacy, fortify the ninja clan, and join us in using martial arts for good. Walk this sacred journey with dojodream.</p>
             </section>
             <section className='landing__section'>
                 <h2 className='landing__heading'>Testimonials</h2>
@@ -74,7 +74,7 @@ const Landing = () => {
             <h2 className='landing__heading landing__heading--main'> Get started</h2>
             <p className='landing__description'>Search for dojos in your local area. Contact the gym and start your journey in martial arts.<br/><br/>
             Find new students by registering your gym on the app. Support the community together with us!</p>
-            <button className='landing__cta' onClick={()=>{navigate('/main')}}>Try dojodream <BiLinkExternal/></button>
+            <a href="/main" target="_blank" className='landing__cta'>Try dojodream <BiLinkExternal/></a>
             </section>
         </section>
     );
