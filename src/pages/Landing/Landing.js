@@ -4,20 +4,21 @@ import { BiLinkExternal } from "react-icons/bi";
 
 const Landing = () => {
     return (
+        <>
         <section className='landing'>
             <section className='landing__section landing__section--main'>
                 <div className='landing__top'>
                     <h1 className='landing__title'>dojodream</h1>
                 </div>
                 <div className='landing__bottom'>
-                <img alt='ninja' className='landing__image' src={require('../../assets/images/dojodreamlogo.png')}/>
+                <img alt='ninja' className='landing__image' src={require('../../assets/images/mainlogo.png')}/>
                     <h2 className='landing__heading landing__heading--main'> Find a dream dojo</h2>
                     <p className='landing__description'>Find martial arts gyms around you within one click. Learn about gym's senseis, schedule, membership cost and more...<br/><br/>
                     Team of designers and engineers made it possible to compare local dojos and find the best martial arts environment near you.</p>
                     <a href="/main" target="_blank" className='landing__cta'>Try dojodream  <BiLinkExternal/></a>
                 </div>
             </section>
-            <section className='landing__section'>
+            <section className='landing__section landing__section--mission'>
                 <h2 className='landing__heading'>Our Mission</h2>
                 <p className='landing__description'>At dojodream we connect enthusiasts with dojos in their own territories.</p>
                 <p className='landing__description'>We're the silent bridge, uniting ninjutsu seekers with enlightening dojos, helping warriors embrace their potential.</p>
@@ -44,7 +45,7 @@ const Landing = () => {
                     </p>
                 </div>
             </section>
-            <section className='landing__section'>
+            <section className='landing__section landing__section--facts'>
                 <h2 className='landing__heading'>dojo Facts</h2>
                 <div className='landing__container'>
                     <div className='landing__fact '>
@@ -71,32 +72,33 @@ const Landing = () => {
                 </div>
             </section>
             <section className='landing__section landing__section--cta'>
-            <h2 className='landing__heading landing__heading--main'> Get started</h2>
-            <p className='landing__description'>Search for dojos in your local area. Contact the gym and start your journey in martial arts.<br/><br/>
-            Find new students by registering your gym on the app. Support the community together with us!</p>
-            <a href="/main" target="_blank" className='landing__cta'>Try dojodream <BiLinkExternal/></a>
+                <h2 className='landing__heading landing__heading--main'> Get started</h2>
+                <p className='landing__description'>Search for dojos in your local area. Contact the gym and start your journey in martial arts.<br/><br/>
+                Find new students by registering your gym on the app. Support the community together with us!</p>
+                <a href="/main" target="_blank" className='landing__cta'>Try dojodream <BiLinkExternal/></a>
             </section>
-            <footer className='landing__footer'>
-                <div className='landing__footer-section'>
-                    <div className='landing__footer-icon-div'>
-                        <img className='landing__footer-icon' alt='insta' src={require('../../assets/images/insta.png')}/>
-                    </div>
-                    <div className='landing__footer-icon-div'>
-                        <img className='landing__footer-icon' alt='facebook' src={require('../../assets/images/facebook.png')}/>
-                    </div>
-                    <div className='landing__footer-icon-div'>
-                        <img className='landing__footer-icon' alt='linkedin' src={require('../../assets/images/linkedin.png')}/>
-                    </div>
-                    <div className='landing__footer-icon-div'>
-                        <img className='landing__footer-icon' alt='x' src={require('../../assets/images/x.com.png')}/>
-                    </div>
-                </div>
-                <div className='landing__footer-section'>
-                    <img src={require('../../assets/images/codingdojo.png')} alt='logo' className='landing__footer-image'/>
-                    <p className='landing__substring landing__substring--footer'><div>© 2008 - 2023 dojodream.<br/> All rights reserved.</div></p>
-                </div>
-            </footer>
         </section>
+        <footer className='landing__footer'>
+        <div className='landing__footer-section'>
+            <div className='landing__footer-icon-div'>
+                <img className='landing__footer-icon' alt='insta' src={require('../../assets/images/insta.png')}/>
+            </div>
+            <div className='landing__footer-icon-div'>
+                <img className='landing__footer-icon' alt='facebook' src={require('../../assets/images/facebook.png')}/>
+            </div>
+            <div className='landing__footer-icon-div'>
+                <img className='landing__footer-icon' alt='linkedin' src={require('../../assets/images/linkedin.png')}/>
+            </div>
+            <div className='landing__footer-icon-div'>
+                <img className='landing__footer-icon' alt='x' src={require('../../assets/images/x.com.png')}/>
+            </div>
+        </div>
+        <div className='landing__footer-section'>
+            <img src={require('../../assets/images/codingdojo.png')} alt='logo' className='landing__image'/>
+            <p className='landing__substring landing__substring--footer'><div>© 2008 - 2023 dojodream.<br/> All rights reserved.</div></p>
+        </div>
+    </footer>
+    </>
         
     );
 }

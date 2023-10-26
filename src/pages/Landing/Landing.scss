@@ -1,7 +1,9 @@
 @use '../../styles/styles.scss' as *;
 
 .landing {
+    padding: 0.5rem;
     justify-content:flex-start;
+    background-color: $primaryHover;
 
     &__title {
         @include title;
@@ -16,9 +18,11 @@
     &__section--main {
         background-color: $primaryHover;
         border-top: none;
+        padding: 1rem;
         
         min-height: 100vh;
         min-height: 100dvh;
+        margin-bottom: 2rem;
 
         display: flex;
         flex-direction: column;
@@ -27,6 +31,7 @@
 
     &__section--cta {
         background-color: $primaryHover;
+        border-top: none;
     }
 
     &__testimonial {
@@ -103,7 +108,9 @@
 
     &__image {
         width: 100%;
-        border-radius: 4px;
+        background-color: $white;
+        padding: 1rem;
+        border-radius: 14px;
         margin-bottom: 1rem;
     }
 
@@ -143,8 +150,20 @@
         @include ctaHover;
     }
 
+    &__section--facts {
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        
+    }
+
+    &__section--mission {
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-top: none ;
+    }
+
     &__footer {
-        padding: 1rem;
+        padding: 1.5rem;
         background-color: $backgroundHtml;
     }
 
@@ -176,11 +195,7 @@
     }
 
     &__footer-image {
-        width: 100%;
-        background-color: $white;
-        padding: 1rem;
-        border-radius: 14px;
-        margin-bottom: 1rem;
+        
     }
 
     &__substring--footer {
