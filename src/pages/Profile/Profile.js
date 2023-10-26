@@ -13,13 +13,12 @@ const Profile = () => {
     const [userId, setUserId] = useState(null)
     const id = localStorage.dojodreamUserId
     console.log(id)
-
+    
     useEffect(() => {
         axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/users/profile', {id})
         .then((response) => {
           setUserId(response.data.id)
           console.log(response.data)
-          console.log(userId)
           console.log(userId)
           axios.get('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/mygyms/' + response.data.id)
           .then((res)=>{
@@ -28,7 +27,6 @@ const Profile = () => {
           .catch((error)=>{
             console.log(error)
           })
-          
         }).catch((err) => {
             console.log(err)
             navigate('/enter')

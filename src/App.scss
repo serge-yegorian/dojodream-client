@@ -7,11 +7,14 @@
     font-family: 'Cornerstone', sans-serif;
 }
 
-html {
-    background-color: $backgroundHtml;
+*::selection {
+    background-color: $secondaryhov;
 }
 
-main {
-    background-color: $background;
-    min-height: 100dvh;
+html {
+    background-color: $white;
 }
+
+// main {
+//     min-height: 100dvh;
+// }

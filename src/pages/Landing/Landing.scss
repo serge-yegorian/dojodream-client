@@ -1,21 +1,138 @@
 @use '../../styles/styles.scss' as *;
 
 .landing {
-    @include page;
     justify-content:flex-start;
 
     &__title {
         @include title;
     }
 
+    &__section {
+        padding: 1rem;
+        border-top: 2px solid $black;
+        background-color: $white;
+    }
+
+    &__section--main {
+        background-color: $primaryHover;
+        border-top: none;
+        
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__section--cta {
+        background-color: $primaryHover;
+    }
+
+    &__testimonial {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        }
+
+    &__description--centered {
+        text-align: center
+    }
+
     &__heading {
         @include heading;
         margin-bottom: 2rem;
+        color: $black;
+        text-shadow: 3px 3px $secondaryhov;
+    }
+
+    &__heading--main {
+        color: $black;
+        text-shadow: 2px 2px $white;
+        margin-bottom: 1rem;
+    }
+
+    &__subheading {
+        margin-bottom: 0;
+        text-shadow: none;
+        font-size: 2rem;
+    }
+
+    &__subheading--fact {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-family: 'Numbers', sans-serif;
+        z-index: 2;
+    }
+
+    &__icon {
+        width: 2.5rem;
+        position: absolute;
+        right: -0.7rem;
+        top: -0.7rem;
+    }
+
+    &__fact {
+        margin-bottom: 2rem;
+    }
+
+    &__fact:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__heading-div {
+        width: fit-content;
+        display: flex;
+        position: relative;
+    }
+
+
+    &__testimonial:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__substring {
+        font-weight: 200;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__image {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+
+    &__image--user {
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+        background-color: $secondaryhov;
+    }
+
+    &__span {
+        font-weight: 900
+    }
+
+    &__fact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__description {
         @include description;
         margin-bottom: 1rem
+    }
+
+    &__description--fact {
+        text-align: center;
+        padding: 0 0.5rem;
+        font-size: 1.4rem
     }
 
     &__cta {

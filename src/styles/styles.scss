@@ -1,12 +1,14 @@
 //variables
-$primary: hsla(30, 50%, 50%, 1);
-$primaryHover: rgb(223, 150, 78);
-$secondary: hsla(220, 50%, 50%, 1);
-$secondaryhov: hsla(220, 50%, 55%, 1);
+$primary:  hsla(220, 50%, 50%, 1);
+$primaryHover: rgb(105, 155, 255);
+$secondary: hsla(30, 50%, 50%, 1);
+$secondaryhov: rgb(223, 150, 78);
 $accent: hsla(0, 70%, 50%, 1);
 $background: hsla(220, 10%, 15%, 1);
+$black: hsla(220, 10%, 15%, 1);
 $backgroundHtml: hsla(220, 10%, 10%, 1);
 $text: hsla(0, 0%, 90%, 1);
+$white: hsla(0, 0%, 90%, 1);
 $font: 'NuberNext', sans-serif;
 
 
@@ -20,7 +22,8 @@ $font: 'NuberNext', sans-serif;
 }
 
 @mixin title {
-    color: $primary;
+    color: $white;
+    text-shadow: 3px 3px $black;
     font-family: $font;
     font-size: 1.8rem;
     margin-bottom: 1rem;
@@ -28,18 +31,18 @@ $font: 'NuberNext', sans-serif;
 
 @mixin heading {
     font-size: 2.2rem;
-    color: $text;
+    color: $black;
     font-family: $font;
 }
 
 @mixin subheading {
     font-size: 1.8rem;
-    color: $text;
+    color: $black;
     font-family: $font;
 }
 
 @mixin description {
-    color: $text;
+    color: $black;
     font-family: $font;
     font-size: 1rem;
     margin-bottom: 0.5rem;
@@ -49,7 +52,7 @@ $font: 'NuberNext', sans-serif;
 @mixin inputDiv {
     position: relative;
     border-radius: 4px;
-    background-color: $text;
+    background-color: $black;
 }
 
 @mixin label {
@@ -59,39 +62,40 @@ $font: 'NuberNext', sans-serif;
     top: 0.5rem;
     padding: 0 0.5rem;
     background-color: $background;
-    color: $text;
+    color: $black;
     transition: 0.2s;
 }
 
 @mixin input {
     border: none;
-    border-bottom: 1px solid $text;
+    border-bottom: 1px solid $black;
     text-align: center;
     padding-left: 0.5rem;
     width: 100%;
     outline: none;
     font-size: 1.2rem;
     background-color: $background;
-    color: $text;
+    color: $black;
 }
 
 @mixin cta {
     font-family: $font;
     height: 2.5rem;
     font-size: 1.2rem;
-    background-color: $text;
-    width: 100%;
-    border: none;
+    background-color: $secondaryhov;
+    border: 2px solid $secondaryhov;
+    padding: 0 2rem;
+    width: 15rem;
     border-radius: 4px;
-    color: $backgroundHtml;
+    color: $black;
     cursor: pointer;
     transition: 0.2s;
+    font-weight: 600;
 }
 
 @mixin ctaHover {
-    color: $text;
-    background-color: $backgroundHtml;
-    border: 2px solid $text;
+    background-color: $secondary;
+    border: 2px solid $secondary;
 }
 
 @mixin link {
@@ -106,7 +110,7 @@ $font: 'NuberNext', sans-serif;
     font-family: $font;
     height: 2.5rem;
     font-size: 1.2rem;
-    background-color: $text;
+    background-color: $black;
     width: 100%;
     border: none;
     border-radius: 4px;
@@ -120,7 +124,11 @@ $font: 'NuberNext', sans-serif;
     font-family:'NuberNext';
     src: url('../assets/fonts/Outfit-VariableFont_wght.ttf');
     font-weight: 0 1000;
-    font-display: swap;
+}
+
+@font-face {
+    font-family:'Numbers';
+    src: url('../assets/fonts/Numbers.ttf');
 }
 
 
