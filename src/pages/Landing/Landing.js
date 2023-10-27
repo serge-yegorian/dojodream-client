@@ -12,15 +12,14 @@ const Landing = () => {
                 </div>
                 <div className='landing__bottom'>
                 <img alt='ninja' className='landing__image' src={require('../../assets/images/mainlogo.png')}/>
-                    <h2 className='landing__heading landing__heading--main'> Find a dream dojo</h2>
-                    <p className='landing__description'>Find martial arts gyms around you within one click. Learn about gym's senseis, schedule, membership cost and more...<br/><br/>
-                    Team of designers and engineers made it possible to compare local dojos and find the best martial arts environment near you.</p>
-                    <a href="/main" target="_blank" className='landing__cta'>Try dojodream  <BiLinkExternal/></a>
+                        <h2 className='landing__heading landing__heading--main'> Find a dream dojo</h2>
+                        <p className='landing__description'>Find martial arts gyms around you within one click. Learn about gym's senseis, schedule, membership cost and more...</p>
+                        {/* <p className='landing__description'>Team of designers and engineers made it possible to compare local dojos and find the best martial arts environment near you.</p> */}
+                        <a href="/main" target="_blank" className='landing__cta'>Try dojodream  <BiLinkExternal/></a>
                 </div>
             </section>
             <section className='landing__section landing__section--mission'>
                 <h2 className='landing__heading'>Our Mission</h2>
-                <p className='landing__description'>At dojodream we connect enthusiasts with dojos in their own territories.</p>
                 <p className='landing__description'>We're the silent bridge, uniting ninjutsu seekers with enlightening dojos, helping warriors embrace their potential.</p>
                 <p className='landing__description'>For dojo senseis, we provide tools to expand their reach and make a mark on the world.</p>
                 <p className='landing__description'>Dojodream offers paths to martial enlightenment, combating bullying, and ensuring safety.</p>
@@ -32,7 +31,7 @@ const Landing = () => {
                     <img alt='Matt Walsh' className=' landing__image landing__image--user' src={require('../../assets/images/mattwalsh.png')}/>
                     <h3 className='landing__subheading'>Matt Walsh</h3>
                     <h3 className='landing__substring'>Owner of 10th Planet Pompano</h3>
-                    <p className='landing__description landing__description--centered'>With dojodream I have more local students coming to the gym every month.<br/><br/>
+                    <p className='landing__description landing__description--centered'>With dojodream I have more local students coming to the gym every month.<br/>
                     Because of simple and transparent interface, they get all information they need to decide to try a class and later sign up for years of trainings.
                     </p>
                 </div>
@@ -40,7 +39,7 @@ const Landing = () => {
                     <img alt='Matt Walsh' className=' landing__image landing__image--user' src={require('../../assets/images/ngannou.png')}/>
                     <h3 className='landing__subheading'>Francis Ngannou</h3>
                     <h3 className='landing__substring'>UFC Heavyweight Champion</h3>
-                    <p className='landing__description landing__description--centered'>With dojodream I found a gym that made me a UFC champion.<br/><br/>
+                    <p className='landing__description landing__description--centered'>With dojodream I found a gym that made me a UFC champion.<br/>
                     Because of simple and transparent interface, I got all information I needed to decide to try a class and later sign up for years of trainings.
                     </p>
                 </div>
@@ -79,7 +78,7 @@ const Landing = () => {
             </section>
         </section>
         <footer className='landing__footer'>
-        <div className='landing__footer-section'>
+        <div className='landing__footer-section landing__footer-section--icons'>
             <div className='landing__footer-icon-div'>
                 <img className='landing__footer-icon' alt='insta' src={require('../../assets/images/insta.png')}/>
             </div>
@@ -93,7 +92,7 @@ const Landing = () => {
                 <img className='landing__footer-icon' alt='x' src={require('../../assets/images/x.com.png')}/>
             </div>
         </div>
-        <div className='landing__footer-section'>
+        <div className='landing__footer-section landing__footer-section--bottom'>
             <img src={require('../../assets/images/codingdojo.png')} alt='logo' className='landing__image'/>
             <p className='landing__substring landing__substring--footer'><div>© 2008 - 2023 dojodream.<br/> All rights reserved.</div></p>
         </div>

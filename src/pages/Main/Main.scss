@@ -2,6 +2,7 @@
 
 .main {
     @include page;
+    background-color: $text;
     
     &__title {
         @include title;
@@ -17,11 +18,23 @@
     //     @include label
     // }
 
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+    }
+
     &__input-div {
         display: flex;
-        position: relative;
-        bottom: 5rem;
-        
+        margin-bottom: 1rem;
+    }
+
+    &__button {
+        @include button;
+    }
+
+    &__button:hover {
+        @include button-hover;
     }
 
     &__input {
@@ -41,7 +54,7 @@
     }
 
     &__link:hover {
-        color: $secondaryhov;
+        color: $secondary;
     }
 
     &__input:focus ~ &__label,

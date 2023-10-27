@@ -2,17 +2,42 @@
 
 .landing {
     padding: 0.5rem;
-    justify-content:flex-start;
     background-color: $primaryHover;
+    @include tablet {
+        padding: 2rem
+    }
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
 
     &__title {
         @include title; 
     }
 
+    &__bottom {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
     &__section {
         padding: 1rem;
-        border-top: 2px solid $black;
+        // border-top: 2px solid $black;
         background-color: $white;
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        @include desktop {
+            width: 35rem;
+            padding: 2rem 0;
+        }
     }
 
     &__section--main {
@@ -20,18 +45,27 @@
         border-top: none;
         padding: 1rem;
         
-        min-height: 100vh;
-        min-height: 100dvh;
+        min-height: calc(100vh - 2rem);
+        min-height: calc(100dvh - 2rem);
         margin-bottom: 2rem;
+
+        @include tablet {
+            min-height: calc(100vh - 4rem);
+            min-height: calc(100dvh - 4rem);
+        }
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
     }
 
     &__section--cta {
         background-color: $primaryHover;
         border-top: none;
+        @include tablet {
+
+        }
     }
 
     &__testimonial {
@@ -49,20 +83,27 @@
     &__heading {
         @include heading;
         margin-bottom: 2rem;
-        color: $black;
-        text-shadow: 3px 3px $secondaryhov;
+        @include tablet {
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 3rem;
+        }
     }
 
     &__heading--main {
         color: $black;
         text-shadow: 3px 3px $white;
         margin-bottom: 1rem;
+        @include tablet {
+            margin-bottom: 2rem;
+        }
     }
 
     &__subheading {
         margin-bottom: 0;
         text-shadow: none;
         font-size: 2rem;
+        @include subheading;
     }
 
     &__subheading--fact {
@@ -72,6 +113,9 @@
         font-size: 2.5rem;
         font-family: 'Numbers', sans-serif;
         z-index: 2;
+        @include tablet {
+            font-size: 3rem;
+        }
     }
 
     &__icon {
@@ -104,6 +148,9 @@
         font-weight: 200;
         font-size: 1rem;
         margin-bottom: 0.5rem;
+        @include tablet {
+            margin-bottom: 1rem;
+        }
     }
 
     &__image {
@@ -112,6 +159,7 @@
         padding: 1rem;
         border-radius: 14px;
         margin-bottom: 1rem;
+        max-width: 15rem;
     }
 
     &__image--user {
@@ -134,13 +182,22 @@
 
     &__description {
         @include description;
-        margin-bottom: 1rem
+        margin-bottom: 1rem;
+        @include tablet {
+            margin-bottom: 2rem;
+            max-width: 25rem;
+            text-align: center;
+        }
     }
 
     &__description--fact {
         text-align: center;
         padding: 0 0.5rem;
-        font-size: 1.4rem
+        font-size: 1.4rem;
+        @include tablet {
+            font-size: 1.6rem;
+            padding: 0 1rem;
+        }
     }
 
     &__cta {
@@ -152,26 +209,59 @@
     }
 
     &__section--facts {
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        @include tablet {
+            border-bottom-left-radius: 4rem;
+            border-bottom-right-radius: 4rem;
+        }
         
     }
 
     &__section--mission {
-        border-top-left-radius: 2rem;
-        border-top-right-radius: 2rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
         border-top: none ;
+        @include tablet {
+            border-top-left-radius: 4rem;
+            border-top-right-radius: 4rem;
+        }
     }
 
     &__footer {
         padding: 1.5rem;
         background-color: $backgroundHtml;
+        @include tablet {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
     }
 
     &__footer-section {
         display: flex;
         justify-content: space-between;
         padding: 1rem;
+    }
+
+    &__footer-section--bottom {
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__footer-section--icons {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        @include tablet {
+            padding: 1rem 2rem;
+            width: 24rem;
+        }
     }
 
     &__footer-icon {
@@ -187,16 +277,16 @@
         height: 2.5rem;
         transition: 0.2s;
         cursor: pointer;
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
     }
 
     &__footer-icon-div:hover {
         background-color: $secondaryhov;
         border: 1px solid $secondaryhov;
     
-    }
-
-    &__footer-image {
-        
     }
 
     &__substring--footer {

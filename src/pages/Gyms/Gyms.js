@@ -17,10 +17,10 @@ const Gyms = () => {
     useEffect(() => {
         axios.get(url)
   .then((response) => {
+    console.log(`google reponse ${response.data}`)
     const target = response.data.results[0].geometry.location;
     setLat(target.lat);
     setLng(target.lng);
-
     // Now that you have valid lat and lng values, send the request to find nearby gyms
     axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/find', { lat: target.lat, lng: target.lng })
       .then((response) => {
