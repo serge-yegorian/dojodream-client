@@ -6,7 +6,7 @@
     background-color: $primaryHover;
 
     &__title {
-        @include title;
+        @include title; 
     }
 
     &__section {
@@ -55,7 +55,7 @@
 
     &__heading--main {
         color: $black;
-        text-shadow: 2px 2px $white;
+        text-shadow: 3px 3px $white;
         margin-bottom: 1rem;
     }
 
@@ -119,6 +119,7 @@
         width: 10rem;
         height: 10rem;
         background-color: $secondaryhov;
+        padding: 0;
     }
 
     &__span {
