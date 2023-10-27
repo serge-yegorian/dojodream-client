@@ -4,7 +4,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: $backgroundHtml;
+    background-color: $primaryHover;
     width: 100%;
     padding: 1rem;
     display: flex;
@@ -14,16 +14,19 @@
 
     &__profile {
         font-size: 2.5rem;
-        color: $secondary;
+        color: $secondaryhov;
         margin-right: 1rem;
         display: flex;
         align-items: center;
         transition: 0.2s;
         cursor: pointer;
+        background-color: $white;
+        border-radius: 50%;
     }
 
     &__profile:hover {
-        color: $secondaryhov;
+        color: $secondary;
+        background-color: white;
     }
 
     &__form {
@@ -43,7 +46,7 @@
         transition: 0.2s;
     }
 
-    &__input:hover {
+    &__input:hover, &__input:focus {
         background-color: white;
     }
 
@@ -54,7 +57,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: $primary;
+        background-color: $secondaryhov;
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
         transition: 0.2s;
@@ -63,7 +66,7 @@
     }
 
     &__cta:hover{
-        background-color: $primaryHover;
+        background-color: $secondary;
     }
 
     &__icon {
@@ -74,11 +77,11 @@
     }
 
     &__icon--secondary {
-        color: $secondary;
+        color: $secondaryhov;
     }
 
     &__icon--secondary:hover {
-        color: $secondaryhov;
+        color: $secondary;
     }
 
     &__icon--primary {

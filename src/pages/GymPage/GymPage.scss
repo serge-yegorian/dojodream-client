@@ -4,8 +4,7 @@
     @include page;
     padding: 0;
     position: relative;
-    padding-bottom: 5rem;
-
+    padding-bottom: 4rem;
 
     &__data--hidden {
         filter: blur(8px);
@@ -21,9 +20,9 @@
 
     &__background {
         width: 100%;
-        filter: grayscale(100%);
         border-radius: 4px;
         height: 18rem;
+        vertical-align: top;
 
     }
 
@@ -32,6 +31,7 @@
         height: 8rem;
         border-radius: 50%;
         background-size: cover;
+        background-position: center;
         
     }
 
@@ -70,6 +70,9 @@
     &__description--address {
         margin-bottom: 0.2rem;
         margin-top: 0;
+        text-align: center;
+        width: 100%;
+        font-family: 'Numbers';
     }
 
     &__nav {
@@ -89,6 +92,17 @@
         font-size: 0.8rem;
         margin-left: 1rem;
         transition: 0.2s;
+    }
+
+    &__button--regular {
+        @include cta;
+        width: fit-content;
+        margin-top: 1rem;
+    }
+
+    &__button--regular:hover {
+        background-color: $secondary;
+        border: 2px solid $secondary;
     }
 
     &__button--cta:hover {
@@ -114,8 +128,12 @@
         background-color: $secondaryhov;
     }
 
-    &__bottom {
+    &__content {
         padding: 1rem;
+    }
+
+    &__media {
+        background-color: $black;
     }
 
     &__choices {
@@ -201,24 +219,27 @@
         @include cta;
         width: fit-content;
         padding: 0 1rem;
-        color: $backgroundHtml;
-        background-color: $text;
-        border: 2px solid $text;
+        color: $text;
+        background-color: $primaryHover;
+        border: 2px solid $primaryHover;
     }
 
     &__show-schedule:hover {
-        background-color: $backgroundHtml;
-        color: $text;
+        background-color: $primary;
+        border: 2px solid $primary;
     }
 
     &__show-schedule--active {
-        background-color: $backgroundHtml;
-        color: $text;
+        background-color: $primary;
+        border: 2px solid $primary;
     }
 
     &__subheading {
         @include subheading;
-        margin-bottom: 1rem;
+    }
+
+    &__subheading--contact {
+        color: $white;
     }
 
     &__coach-image {
@@ -253,15 +274,17 @@
 
     &__address-div {
         cursor: pointer;
+        padding: 1rem;
     }
 
     &__media {
+        padding: 1rem;
         margin-top: 2rem;
     }
 
     &__website {
         @include link;
-        color: $text;
+        color: $primaryHover;
         display: block;
         padding: 0.5rem;
         padding-left: 0;
@@ -272,7 +295,7 @@
     }
 
     &__website:hover {
-        color: $primaryHover;
+        color: $primary;
     }
 
     &__icon {

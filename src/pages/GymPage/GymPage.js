@@ -4,6 +4,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './GymPage.scss';
 import { FiCopy } from "react-icons/fi";
 import { BsLink45Deg } from "react-icons/bs";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -93,7 +96,16 @@ const GymPage = () => {
         // Clean up by removing the textarea
         document.body.removeChild(textArea);
       
-        alert('Text copied to clipboard');
+        toast.success('Address Copied!', {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+            });
       };
 
     const deleteGym = (e) => {
@@ -123,18 +135,21 @@ const GymPage = () => {
                     </div>
                 </div>
                 <div className='gym__bottom'>
+                    <div className='gym__content'>
                     <div className='gym__address-div' onMouseEnter={toggleIcon} onMouseLeave={toggleIcon} onClick={copyAddress}>
-                        <p className='gym__description gym__description--address'>{`${gymData.street}`}</p>
-                        <p className='gym__description gym__description--address'>{`${gymData.city}`}</p>
+                        <p className='gym__description gym__description--address'>{`${gymData.street},`}</p>
+                        <p className='gym__description gym__description--address'>{`${gymData.city},`}</p>
                         <p className='gym__description gym__description--address'>{`${gymData.state} ${gymData.zip}`} <span className='gym__icon'><FiCopy/></span></p>
                     </div>
                     <p className='gym__description'>{gymData.bio}</p>
                     {gymData.schedule && <button type='button' onClick={toggleSchedule} className='gym__show-schedule'>Schedule</button>}
                     {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.url} /></div>}
+                    </div>
                     { gymData.insta || gymData.facebook || gymData.website ?
                         <div className='gym__media'>
-                        <h3 className='gym__subheading'>Social Media:</h3>
+                        <h3 className='gym__subheading gym__subheading--contact'>Contact:</h3>
                         <div className='gym__media-content'>
+                            <div className='gym__button--regular' onClick={copyAddress}>Share URL</div>
                             {gymData.website && <a href={gymData.website} target="_blank" className="gym__website">Website<BsLink45Deg className='gym__link-icon'/></a>}
                             <div className='gym__media-icons'>
                                 {gymData.insta && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="insta" className='gym__media-icon' src={require('../../assets/images/insta.png')}/></a>}
@@ -173,7 +188,9 @@ const GymPage = () => {
                 <button onClick={()=>{navigate(-1)}} type='button' className='gym__button gym__button--secondary'>Back</button>
                 <button className='gym__button gym__button--cta' onClick={toggleChoices}>Edit Gym</button>
             </nav>
+            <ToastContainer/>
         </section> : ''
+        
     )}
 
 export default GymPage;

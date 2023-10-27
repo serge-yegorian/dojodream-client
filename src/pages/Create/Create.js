@@ -42,7 +42,7 @@ const Create = () => {
             }))
             console.log(gym)
             // send the gym
-            axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/creategym', gym)
+            axios.post('http://localhost:4000/gyms/creategym', gym)
             .then((res) =>{
                 const gymAddress = res.data._id;
                 navigate(`/gyms/${gymAddress}`)

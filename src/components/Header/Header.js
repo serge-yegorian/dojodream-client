@@ -2,7 +2,8 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ZipContext } from '../../App';
 import './Header.scss';
-import {VscAccount, VscArrowRight,} from "react-icons/vsc";
+import {VscArrowRight,} from "react-icons/vsc";
+import { AiOutlineUser } from "react-icons/ai";
 import { BiLogOut, BiArrowBack } from "react-icons/bi";
 import { MdAddCircle } from "react-icons/md";
 
@@ -35,7 +36,7 @@ const Header = ({profile}) => {
         <header className='header'>
             {profile ? <p className="header__icon header__icon--secondary" onClick={()=>{navigate(-1)}}><BiArrowBack/></p> : 
             <Link to="/profile" className='header__profile-link'>
-                <VscAccount className='header__profile'/>
+                <AiOutlineUser className='header__profile'/>
             </Link>}
             {profile ? <p className='header__icon header__icon--center' onClick={()=>{navigate('/create')}}><span className="header__icon-text">Add </span><MdAddCircle className='header__icon--primary'/></p> : ''}
             {profile ? <p className='header__icon header__icon--secondary' onClick={logout}><BiLogOut/></p> : <form className='header__form' onSubmit={ctaSubmit}>
