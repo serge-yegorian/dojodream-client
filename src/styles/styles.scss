@@ -9,6 +9,7 @@ $black: hsla(220, 10%, 15%, 1);
 $backgroundHtml: hsla(220, 10%, 10%, 1);
 $text: hsla(0, 0%, 90%, 1);
 $white: hsla(0, 0%, 90%, 1);
+$green: #07bc0c;
 $font: 'NuberNext', sans-serif;
 
 
@@ -93,22 +94,23 @@ $font: 'NuberNext', sans-serif;
 }
 
 @mixin cta {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: $font;
-    height: 2.5rem;
-    font-size: 1.2rem;
-    background-color: $secondaryhov;
-    border: 2px solid $secondaryhov;
-    padding: 0 2rem;
-    width: 15rem;
-    border-radius: 4px;
-    color: $black;
-    cursor: pointer;
-    transition: 0.2s;
-    font-weight: 600;
+        align-items: center;
+        background-color: #ffac59;
+        border: 2px solid #ffac59;
+        border-radius: 4px;
+        color: #22252a;
+        cursor: pointer;
+        display: flex;
+        font-family: 'NuberNext',sans-serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        height: 2.5rem;
+        justify-content: center;
+        padding: 0 2rem;
+        text-decoration: none;
+        transition: .2s;
+        width: 15rem;
+    
     @include tablet {
         font-size: 1.6rem;
         width: 18rem;

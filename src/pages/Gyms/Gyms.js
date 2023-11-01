@@ -17,6 +17,9 @@ const Gyms = () => {
     const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(zip)}&key=${apiKey}`;
 
     useEffect(() => {
+      if (zip === '') {
+        navigate('/main')
+      }
       axios.get(url)
         .then((response) => {
           console.log(`google reponse ${response.data}`)
@@ -26,7 +29,7 @@ const Gyms = () => {
           axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/find', { lat: target.lat, lng: target.lng })
             .then((response) => {
               setGyms(response.data);
-              console.log(response.data);
+              console.log(`response.data === ${response.data}`);
             })
             .catch((err) => {
               console.log(err);

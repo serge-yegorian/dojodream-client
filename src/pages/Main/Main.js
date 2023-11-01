@@ -37,7 +37,7 @@ const Main = () => {
                                 maxLength="5"
                                 name='zip'
                                 id='zip'
-                                placeholder={zip}
+                                placeholder={33062}
                                 value={inputValue}
                                 required
                             />

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './GymPage.scss';
 import { FiCopy } from "react-icons/fi";
-import { BsLink45Deg } from "react-icons/bs";
+import { VscLinkExternal } from "react-icons/vsc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -113,7 +113,16 @@ const GymPage = () => {
         axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/deletegym', {gymAddress})
         .then((res)=>{
             console.log(res)
-            alert('Deleted Successfully!')
+            toast.success('Successfully Deleted!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: true,
+                closeOnClick: false,
+                pauseOnHover: false,
+                draggable: false,
+                progress: undefined,
+                theme: "light",
+                });
             navigate(-1)
         })
         .catch((err)=>{
@@ -136,21 +145,28 @@ const GymPage = () => {
                 </div>
                 <div className='gym__bottom'>
                     <div className='gym__content'>
-                    <div className='gym__address-div' onMouseEnter={toggleIcon} onMouseLeave={toggleIcon} onClick={copyAddress}>
-                        <p className='gym__description gym__description--address'>{`${gymData.street},`}</p>
-                        <p className='gym__description gym__description--address'>{`${gymData.city},`}</p>
-                        <p className='gym__description gym__description--address'>{`${gymData.state} ${gymData.zip}`} <span className='gym__icon'><FiCopy/></span></p>
-                    </div>
-                    <p className='gym__description'>{gymData.bio}</p>
-                    {gymData.schedule && <button type='button' onClick={toggleSchedule} className='gym__show-schedule'>Schedule</button>}
-                    {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.url} /></div>}
+                        <div className='gym__address-div' onMouseEnter={toggleIcon} onMouseLeave={toggleIcon} onClick={copyAddress}>
+                            <p className='gym__description gym__description--address'>{`${gymData.street},`}</p>
+                            <p className='gym__description gym__description--address'>{`${gymData.city},`}</p>
+                            <p className='gym__description gym__description--address'>{`${gymData.state} ${gymData.zip}`} <span className='gym__icon'><FiCopy/></span></p>
+                        </div>
+                        <p className='gym__description'>{gymData.bio}</p>
+                        {gymData.schedule && <button type='button' onClick={toggleSchedule} className='gym__show-schedule'>Schedule</button>}
+                        {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.url} /></div>}
+                        <button className='gym__button gym__button--cta' onClick={toggleChoices}>Edit Gym</button>
+                        <p className='gym__price'>
+                            Membership starts at $99/month
+                        </p>
+                        <p className='gym__price'>
+                            Drop in: $25
+                        </p>
                     </div>
                     { gymData.insta || gymData.facebook || gymData.website ?
                         <div className='gym__media'>
                         <h3 className='gym__subheading gym__subheading--contact'>Contact:</h3>
                         <div className='gym__media-content'>
                             <div className='gym__button--regular' onClick={copyAddress}>Share URL</div>
-                            {gymData.website && <a href={gymData.website} target="_blank" className="gym__website">Website<BsLink45Deg className='gym__link-icon'/></a>}
+                            {gymData.website && <a href={gymData.website} target="_blank" className="gym__website"><VscLinkExternal className='gym__link-icon'/></a>}
                             <div className='gym__media-icons'>
                                 {gymData.insta && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="insta" className='gym__media-icon' src={require('../../assets/images/insta.png')}/></a>}
                                 {gymData.facebook && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="facebook" className='gym__media-icon' src={require('../../assets/images/facebook.png')}/></a>}
@@ -158,9 +174,8 @@ const GymPage = () => {
                                 {gymData.tapology && <a href={gymData.tapology} target="_blank" className="gym__media-link"><img alt="tapology" className='gym__media-icon' src={require('../../assets/images/tapology.png')}/></a>}
                             </div>
                         </div>
-                    </div> : ''
-                    } 
-                    {coaches && coaches.map((coach)=>(
+                    </div> : '' } 
+                    {/* {coaches && coaches.map((coach)=>(
                         <div className='gym__coaches'>
                             <h2 className='gym__subheading'>Coaches:</h2>
                             <div className='gym__coach'>
@@ -171,7 +186,7 @@ const GymPage = () => {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
             </div>
             <div className='gym__choices'>
@@ -184,10 +199,9 @@ const GymPage = () => {
                     <p className='gym__choice'onClick={() => navigate(`/addcoaches/${gymAddress}`)}>Coaches</p>
                 </div>
             
-            <nav className='gym__nav'>
+            {/* <nav className='gym__nav'>
                 <button onClick={()=>{navigate(-1)}} type='button' className='gym__button gym__button--secondary'>Back</button>
-                <button className='gym__button gym__button--cta' onClick={toggleChoices}>Edit Gym</button>
-            </nav>
+            </nav> */}
             <ToastContainer/>
         </section> : ''
         

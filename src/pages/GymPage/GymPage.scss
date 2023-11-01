@@ -4,7 +4,6 @@
     @include page;
     padding: 0;
     position: relative;
-    padding-bottom: 4rem;
 
     &__data--hidden {
         filter: blur(8px);
@@ -63,14 +62,12 @@
     &__description {
         @include description;
         width: fit-content;
-        margin-bottom: 2rem;
-        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
     &__description--address {
         margin-bottom: 0.2rem;
         margin-top: 0;
-        text-align: center;
         width: 100%;
         font-family: 'Numbers';
     }
@@ -86,11 +83,10 @@
     }
 
     &__button--cta {
+        margin-top: 1rem;
         @include cta;
-        width: 80%;
         border: none;
         font-size: 0.8rem;
-        margin-left: 1rem;
         transition: 0.2s;
     }
 
@@ -110,18 +106,28 @@
     }
 
     &__button--secondary {
-        width: 20%;
-        height: 2.5rem;
-        border: none;
+        align-items: center;
+        background-color: transparent;
+        border: 2px solid #22252a;
         border-radius: 4px;
-        background-color: $secondary;
-        color: $text;
+        color: #22252a;
         cursor: pointer;
-        transition: 0.2s;
-    }
-
-    &__button {
+        display: flex;
+        font-family: 'NuberNext',sans-serif;
         font-size: 1.2rem;
+        font-weight: 600;
+        height: 2.5rem;
+        justify-content: center;
+        padding: 0 2rem;
+        text-decoration: none;
+        transition: .2s;
+        width: 15rem;
+    
+    @include tablet {
+        font-size: 1.6rem;
+        width: 18rem;
+        height: 3rem;
+    }
     }
 
     &__button--secondary:hover {
@@ -133,7 +139,7 @@
     }
 
     &__media {
-        background-color: $black;
+        background-color: $primaryHover;
     }
 
     &__choices {
@@ -220,18 +226,19 @@
         width: fit-content;
         padding: 0 1rem;
         color: $text;
-        background-color: $primaryHover;
-        border: 2px solid $primaryHover;
+        background-color: $secondaryhov;
+        border: 2px solid $secondaryhov;
+        color: $black;
     }
 
     &__show-schedule:hover {
-        background-color: $primary;
-        border: 2px solid $primary;
+        background-color: $secondary;
+        border: 2px solid $secondary;
     }
 
     &__show-schedule--active {
-        background-color: $primary;
-        border: 2px solid $primary;
+        background-color: transparent;
+        border: 2px solid $secondary;   
     }
 
     &__subheading {
@@ -275,6 +282,11 @@
     &__address-div {
         cursor: pointer;
         padding: 1rem;
+        padding-left: 0;
+    }
+
+    &__price {
+        @include description;
     }
 
     &__media {
@@ -284,7 +296,6 @@
 
     &__website {
         @include link;
-        color: $primaryHover;
         display: block;
         padding: 0.5rem;
         padding-left: 0;
@@ -295,7 +306,7 @@
     }
 
     &__website:hover {
-        color: $primary;
+        color: $secondary;
     }
 
     &__icon {

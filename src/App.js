@@ -21,7 +21,7 @@ export const ZipContext = createContext();
 
 function App() {
 
-  const [zip, setZip] = useState('33062')
+  const [zip, setZip] = useState('')
 
   return (
       <ZipContext.Provider value={{zip, setZip}}>
