@@ -15,12 +15,12 @@
 
     &__top {
         position: relative;
+        width: fit-content;
     }
 
     &__background {
         width: 100%;
         border-radius: 4px;
-        height: 18rem;
         vertical-align: top;
 
     }
@@ -39,14 +39,35 @@
         bottom: 0;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         height: 100%;
         width: 100%;
         background-color: hsla(0, 0%, 0%, 30%);
         padding: 2rem;
-        text-align: center;
-        height: 18rem;
+        text-align: center; 
+    }
+
+    &__price {
+        border: 2px solid $primaryHover;
+        margin-bottom: 1rem;
+        width: fit-content;
+        padding: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: $primaryHover;
+        transition: 0.2s;
+        display: block;
+        text-decoration: none;
+    }
+
+    &__price:hover {
+        background-color: $primary;
+        border: 2px solid$primary;
+    }
+
+    &__dynamic-price {
+        // color: $primaryHover;
     }
 
     &__middle {
@@ -63,6 +84,7 @@
         @include description;
         width: fit-content;
         margin-bottom: 1rem;
+        font-size: 1.1rem;
     }
 
     &__description--address {
@@ -86,8 +108,9 @@
         margin-top: 1rem;
         @include cta;
         border: none;
-        font-size: 0.8rem;
         transition: 0.2s;
+        width: fit-content;
+        font-size: 1rem;
     }
 
     &__button--regular {
@@ -102,7 +125,7 @@
     }
 
     &__button--cta:hover {
-        background-color: $primaryHover;
+        background-color: $secondary;
     }
 
     &__button--secondary {
@@ -229,6 +252,7 @@
         background-color: $secondaryhov;
         border: 2px solid $secondaryhov;
         color: $black;
+        font-size: 1rem;
     }
 
     &__show-schedule:hover {
@@ -287,6 +311,7 @@
 
     &__price {
         @include description;
+        font-size: 1rem;
     }
 
     &__media {

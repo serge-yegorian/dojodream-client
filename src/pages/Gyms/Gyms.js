@@ -47,7 +47,7 @@ const Gyms = () => {
             <div className='gyms__content'>
                 <div className='gyms__top'>
                     <h1 className='main__title'>dojodream</h1>
-                    <h2 className='gyms__heading'>Near {zip}:</h2>
+                    <h2 className='gyms__heading'>Gyms Near {zip}:</h2>
                 </div>
                 <div className='gyms__array'>
                 {gyms.map((gym) => (

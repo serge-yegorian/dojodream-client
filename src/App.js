@@ -12,9 +12,9 @@ import EditNameBio from './pages/EditNameBio/EditNameBio';
 import AddLinks from './pages/AddLinks/AddLinks';
 import EditPhoneEmail from './pages/EditPhoneEmail/EditPhoneEmail';
 import EditAddress from './pages/EditAddress/EditAddress';
-import EditCoach from './pages/EditCoach/EditCoach';
-import CheckCoaches from './pages/CheckCoaches/CheckCoaches';
-import CreateCoach from './pages/CreateCoach/CreateCoach';
+// import EditCoach from './pages/EditCoach/EditCoach';
+// import CheckCoaches from './pages/CheckCoaches/CheckCoaches';
+// import CreateCoach from './pages/CreateCoach/CreateCoach';
 import Landing from './pages/Landing/Landing';
 
 export const ZipContext = createContext();
@@ -43,9 +43,9 @@ function App() {
               <Route path='/editphoneandemail/:id' element={<EditPhoneEmail/>}/>
               <Route path='/addlinks/:id' element={<AddLinks/>}/>
               <Route path='/editaddress/:id' element={<EditAddress/>}/>
-              <Route path='/coaches/:id' element={<EditCoach/>}/>
-              <Route path='/addcoaches/:id' element={<CheckCoaches/>}/>
-              <Route path='/createcoach/:id' element={<CreateCoach/>}/>
+              {/* <Route path='/coaches/:id' element={<EditCoach/>}/> */}
+              {/* <Route path='/addcoaches/:id' element={<CheckCoaches/>}/>
+              <Route path='/createcoach/:id' element={<CreateCoach/>}/> */}
             </Routes>
             </main>
           </BrowserRouter>

@@ -21,6 +21,10 @@ $font: 'NuberNext', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include tablet {
+        min-height: calc(100vh - 2rem - 4px);
+        min-height: calc(100dvh - 2rem - 4px);
+    }
 }
 
 @mixin title {

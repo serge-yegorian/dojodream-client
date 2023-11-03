@@ -8,7 +8,7 @@ const GymCard = (props) => {
     return (
         <section className='gymCard' onClick={()=>{navigate(`/gyms/${_id}`)}}>
             <div className='gymCard__content'>
-                <img alt="gym logo"className='gymCard__image' src={ logo.url || require('../../assets/images/square.jpeg')}/>
+                <img alt="gym logo"className='gymCard__image' src={ logo ? logo.url : require('../../assets/images/square.jpeg')}/>
                 <div className='gymCard__bottom'>
                     <h1 className='gymCard__heading'>{name}</h1>
                 </div>

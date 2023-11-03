@@ -23,38 +23,43 @@ const Create = () => {
         setGym({ ...gym, [name]: value });
     }
 
-    // get lat and lng
+    // get lat and lng AIzaSyBJcR7SgvoNRntpoA0YbVsxFPxcI9RPl8M
     const getlnglat = (e) => {
-        const apiKey = 'AIzaSyBJcR7SgvoNRntpoA0YbVsxFPxcI9RPl8M';
+        e.preventDefault();
+    
+        const apiKey = 'AIzaSyBJcR7SgvoNRntpoA0YbVsxFPxcI9RPl8M'; // Replace with your actual API key
         const address = `${gym.street}, ${gym.city}, ${gym.state} ${gym.zip}`;
         const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
-        e.preventDefault()
+    
         axios.get(url)
-        .then((response) => {
-            const target = response.data.results[0].geometry.location;
-            setGym((prevGym)=>({
-                ...prevGym,
-                location: {
-                    type: "Point",
-                    coordinates: [target.lng, target.lat], // Notice the order: [longitude, latitude]
-                },
-                gymOwner: userId,
-            }))
-            console.log(gym)
-            // send the gym
-            axios.post('http://localhost:4000/gyms/creategym', gym)
-            .then((res) =>{
+            .then((response) => {
+                const target = response.data.results[0].geometry.location;
+                const updatedGym = {
+                    ...gym,
+                    location: {
+                        type: "Point",
+                        coordinates: [target.lng, target.lat],
+                    },
+                    gymOwner: userId,
+                };
+    
+                setGym(updatedGym); // Update the state immediately
+    
+                console.log(updatedGym);
+    
+                return axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/creategym', updatedGym);
+            })
+            .then((res) => {
                 const gymAddress = res.data._id;
-                navigate(`/gyms/${gymAddress}`)
+                navigate(`/gyms/${gymAddress}`);
             })
             .catch((err) => {
-                console.log(err)
-            })
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+                console.log(err);
+                console.log(`An error occurred`);
+            });
+    };
+    
+    
 
     const [gym, setGym] = useState({
         name: '',
@@ -118,12 +123,11 @@ const Create = () => {
                             </div>
                         </div>
                     </div>
+
                 </div>
-            </div>
-            <nav className='create__buttons'>
-                <button className='create__button create__button--secondary' type='button' onClick={()=>{navigate(-1)}}>Back</button>
                 <button className='create__button create__button--cta' type='submit'>Add</button>
-            </nav>
+                    <button className='create__button create__button--secondary' type='button' onClick={()=>{navigate(-1)}}>Back</button>
+            </div>
         </form> : ''
     );
 }

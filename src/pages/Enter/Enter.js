@@ -46,6 +46,7 @@ const Enter = () => {
                 progress: undefined,
                 theme: "light",
                 });
+                formRef.current.reset()
                 axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/users/login', { username, password })
             .then((response) => {
                 console.log('great success!');
@@ -63,7 +64,6 @@ const Enter = () => {
                     });
                 navigate('/create');
             })
-
         })
         .catch((err) => {
             if (err.response.status == 400 ) {
@@ -79,7 +79,7 @@ const Enter = () => {
                 }) 
             }
         })
-        formRef.current.reset()
+        
     }
 
     // login function
@@ -89,7 +89,6 @@ const Enter = () => {
             .then((response) => {
                 console.log('great success!');
                 window.localStorage.setItem('dojodreamUserId', response.data);
-                formRef.current.reset();
                 toast.success(`Logged in as ${username}!`, {
                     position: "top-center",
                     autoClose: 2000,
@@ -100,6 +99,7 @@ const Enter = () => {
                     progress: undefined,
                     theme: "light",
                     });
+                formRef.current.reset();
                 navigate('/profile');
             })
             .catch((err) => {

@@ -34,12 +34,23 @@ const Header = ({profile}) => {
 
     return (
         <header className='header'>
-            {profile ? <p className="header__icon header__icon--secondary" onClick={()=>{navigate(-1)}}><BiArrowBack/></p> : 
+
+            {profile ?
+            <p className="header__icon header__icon--secondary" onClick={()=>{navigate(-1)}}><BiArrowBack className='header__icon-element'/></p> 
+            : 
             <Link to="/profile" className='header__profile-link'>
                 <AiOutlineUser className='header__profile'/>
             </Link>}
-            {profile ? <p className='header__icon header__icon--center' onClick={()=>{navigate('/create')}}><span className="header__icon-text">Add </span><MdAddCircle className='header__icon--primary'/></p> : ''}
-            {profile ? <p className='header__icon header__icon--secondary' onClick={logout}><BiLogOut/></p> : <form className='header__form' onSubmit={ctaSubmit}>
+
+            {profile ?
+            <p className='header__icon header__icon--center' onClick={()=>{navigate('/create')}}><span className="header__icon-text">Add </span><MdAddCircle className='header__icon--primary'/></p>
+            : 
+            ''}
+
+            {profile ?
+            <p className='header__icon header__icon--secondary' onClick={logout}><BiLogOut className='header__icon-element'/></p>
+            :
+             <form className='header__form' onSubmit={ctaSubmit}>
                 <input className="header__input" type="text" minLength="5" maxLength="5" placeholder={zip} onChange={setInputZip}/>
                 <button className='header__cta'><VscArrowRight/></button>
             </form>}

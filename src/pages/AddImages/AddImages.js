@@ -38,7 +38,7 @@ const AddImages = () => {
         formData.append("gymAddress", gymAddress);
         formData.append("logoPublicId", logoPublicId)
         formData.append("upload_preset", "ml_default");
-        axios.post('http://localhost:4000/gyms/uploadLogo/', formData)
+        axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/gyms/uploadLogo/', formData)
         .then((res) => {
             console.log(res)
             setLogoPublicId(res.data.logo.public_id)

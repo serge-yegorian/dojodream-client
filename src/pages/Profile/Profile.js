@@ -13,6 +13,10 @@ const Profile = () => {
     const [userId, setUserId] = useState(null)
     const id = localStorage.dojodreamUserId
     console.log(id)
+
+    const create = () => {
+      navigate('/create')
+    }
     
     useEffect(() => {
         axios.post('https://king-prawn-app-9vmwa.ondigitalocean.app/users/profile', {id})
@@ -37,13 +41,23 @@ const Profile = () => {
        <section className='profile'>
             <div className='profile__section'>
                 <h1 className='profile__title'>dojodream</h1>
+               {gyms.length >= 1
+               ?
+               <>
                 <h2 className='profile__heading'>Your Gyms:</h2>
-                <div className='profile__gyms'>
-                    {gyms.map((gym) => (
-                        <GymCard key={gym._id} {...gym}/>
-                    ))}
-                    {gyms === null ? <h2 className='profile__heading'>You do not have any gyms, but can always add one</h2> : ''}
-                </div>
+                  <div className='profile__gyms'>
+                      {gyms.map((gym) => (
+                          <GymCard key={gym._id} {...gym}/>
+                      ))}
+                      {gyms === null ? <h2 className='profile__heading'>You do not have any gyms, but can always add one</h2> : ''}
+                  </div>
+                </> 
+                : 
+                <>
+                  <h2 className='profile__heading'>You have no gyms:</h2>
+                  <button onClick={create} className='profile__cta'>Add Gym</button>
+                </>
+                } 
             </div>
             <Header profile={true}/>
         </section>

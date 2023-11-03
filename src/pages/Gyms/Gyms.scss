@@ -3,9 +3,11 @@
 .gyms {
     @include page;
     padding: 0;
+    position: relative;
 
     &__content {
-        padding: 1rem
+        padding: 1rem;
+        position: relative;
     }
 
     &__title {

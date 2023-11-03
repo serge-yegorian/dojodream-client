@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './GymPage.scss';
+
+import { BsInstagram } from "react-icons/bs";
 import { FiCopy } from "react-icons/fi";
 import { VscLinkExternal } from "react-icons/vsc";
 import { ToastContainer, toast } from 'react-toastify';
@@ -86,16 +88,12 @@ const GymPage = () => {
         // Make the textarea out of the viewport to prevent it from being visible
         textArea.style.position = 'fixed';
         textArea.style.top = '-9999px';
-      
         document.body.appendChild(textArea);
         textArea.select();
-      
         // Copy the text to the clipboard
         document.execCommand('copy');
-      
         // Clean up by removing the textarea
         document.body.removeChild(textArea);
-      
         toast.success('Address Copied!', {
             position: "top-center",
             autoClose: 2000,
@@ -139,35 +137,35 @@ const GymPage = () => {
                     <div className='gym__absolute'>
                         <div className='gym__middle'>
                             <div className='gym__logo' style={{ backgroundImage: `url(${gymData.logo? gymData.logo.url : '../../assets/images/logo-type.png'})` }}></div>
-                            <h1 className='gym__title'>{gymData.name}</h1>
                         </div>
                     </div>
                 </div>
                 <div className='gym__bottom'>
                     <div className='gym__content'>
+                    <h1 className='gym__title'>{gymData.name}</h1>
                         <div className='gym__address-div' onMouseEnter={toggleIcon} onMouseLeave={toggleIcon} onClick={copyAddress}>
                             <p className='gym__description gym__description--address'>{`${gymData.street},`}</p>
                             <p className='gym__description gym__description--address'>{`${gymData.city},`}</p>
                             <p className='gym__description gym__description--address'>{`${gymData.state} ${gymData.zip}`} <span className='gym__icon'><FiCopy/></span></p>
                         </div>
+                        <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
+                            Drop in: <span className='gym__dynamic-price'>$25</span> 
+                        </a>
+                        <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
+                            Membership from: <span className='gym__dynamic-price'>$100/month</span> 
+                        </a>
                         <p className='gym__description'>{gymData.bio}</p>
                         {gymData.schedule && <button type='button' onClick={toggleSchedule} className='gym__show-schedule'>Schedule</button>}
                         {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.url} /></div>}
                         <button className='gym__button gym__button--cta' onClick={toggleChoices}>Edit Gym</button>
-                        <p className='gym__price'>
-                            Membership starts at $99/month
-                        </p>
-                        <p className='gym__price'>
-                            Drop in: $25
-                        </p>
                     </div>
                     { gymData.insta || gymData.facebook || gymData.website ?
                         <div className='gym__media'>
                         <h3 className='gym__subheading gym__subheading--contact'>Contact:</h3>
                         <div className='gym__media-content'>
                             <div className='gym__button--regular' onClick={copyAddress}>Share URL</div>
-                            {gymData.website && <a href={gymData.website} target="_blank" className="gym__website"><VscLinkExternal className='gym__link-icon'/></a>}
                             <div className='gym__media-icons'>
+                                {gymData.website && <a href={gymData.website} target="_blank" className="gym__website"><img alt="insta" className='gym__media-icon' src={require('../../assets/images/website.png')}/></a>}
                                 {gymData.insta && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="insta" className='gym__media-icon' src={require('../../assets/images/insta.png')}/></a>}
                                 {gymData.facebook && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="facebook" className='gym__media-icon' src={require('../../assets/images/facebook.png')}/></a>}
                                 {gymData.smoothcomp && <a href={gymData.smoothcomp} target="_blank" className="gym__media-link"><img alt="smoothcomp" className='gym__media-icon' src={require('../../assets/images/smoothcomp.png')}/></a>}
@@ -196,7 +194,7 @@ const GymPage = () => {
                     <p className='gym__choice' onClick={() => navigate(`/addimages/${gymAddress}`)}>Logo, Background, Schedule</p>
                     <p className='gym__choice' onClick={() => navigate(`/editaddress/${gymAddress}`)}>Address</p>
                     <p className='gym__choice' onClick={() => navigate(`/addlinks/${gymAddress}`)}>Social Media Links</p>
-                    <p className='gym__choice'onClick={() => navigate(`/addcoaches/${gymAddress}`)}>Coaches</p>
+                    {/* <p className='gym__choice'onClick={() => navigate(`/addcoaches/${gymAddress}`)}>Coaches</p> */}
                 </div>
             
             {/* <nav className='gym__nav'>
