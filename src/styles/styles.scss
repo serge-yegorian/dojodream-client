@@ -33,9 +33,6 @@ $font: 'NuberNext', sans-serif;
     font-family: $font;
     font-size: 1.8rem;
     margin-bottom: 4rem;
-    @include tablet {
-        font-size: 2.2rem;
-    }
 }
 
 @mixin heading {
@@ -44,18 +41,12 @@ $font: 'NuberNext', sans-serif;
     font-family: $font;
     color: $black;
     text-shadow: 3px 3px $secondaryhov;
-    @include tablet {
-        font-size: 2.5rem;
-    }
 }
 
 @mixin subheading {
     font-size: 1.8rem;
     color: $black;
     font-family: $font;
-    @include tablet {
-        font-size: 2.2rem
-    }
 
 }
 
@@ -64,10 +55,6 @@ $font: 'NuberNext', sans-serif;
     font-family: 'Numbers', sans-serif;
     font-size: 1rem;
     font-size: 1.2rem;
-    @include tablet {
-        font-size: 1.4rem;
-    }
-
 }
 
 @mixin inputDiv {
@@ -115,11 +102,7 @@ $font: 'NuberNext', sans-serif;
         transition: .2s;
         width: 15rem;
     
-    @include tablet {
-        font-size: 1.6rem;
-        width: 18rem;
-        height: 3rem;
-    }
+    
 }
 
 @mixin ctaHover {

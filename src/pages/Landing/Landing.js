@@ -94,7 +94,7 @@ const Landing = () => {
         </div>
         <div className='landing__footer-section landing__footer-section--bottom'>
             <img src={require('../../assets/images/codingdojo.png')} alt='logo' className='landing__image'/>
-            <p className='landing__substring landing__substring--footer'><div>© 2008 - 2023 dojodream.<br/> All rights reserved.</div></p>
+            <p className='landing__substring landing__substring--footer'><div className="landing__reserved">© 2008 - 2023 dojodream.<br/> All rights reserved.</div></p>
         </div>
     </footer>
     </>

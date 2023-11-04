@@ -14,6 +14,9 @@
 
     &__title {
         @include title; 
+        @include tablet {
+            font-size: 2.2rem;
+        }
     }
 
     &__bottom {
@@ -102,6 +105,9 @@
         text-shadow: none;
         font-size: 2rem;
         @include subheading;
+        @include tablet {
+            font-size: 2.2rem
+        }
     }
 
     &__subheading--fact {
@@ -145,6 +151,8 @@
     &__substring {
         font-weight: 200;
         font-size: 1rem;
+        font-family: "Numbers", sans-serif;
+        color: rgb(91, 91, 91);
         margin-bottom: 0.5rem;
         @include tablet {
             margin-bottom: 1rem;
@@ -186,6 +194,9 @@
             max-width: 25rem;
             text-align: center;
         }
+        @include tablet {
+            font-size: 1.4rem;
+        }
     }
 
     &__description--fact {
@@ -200,6 +211,11 @@
 
     &__cta {
         @include cta;
+        @include tablet {
+            font-size: 1.6rem;
+            width: 18rem;
+            height: 3rem;
+        }
     }
 
     &__cta:hover{
@@ -214,6 +230,10 @@
             border-bottom-right-radius: 4rem;
         }
         
+    }
+
+    &__reserved {
+        font-family: 'Numbers', sans-serif;
     }
 
     &__section--mission {
