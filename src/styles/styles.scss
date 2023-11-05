@@ -15,6 +15,7 @@ $font: 'NuberNext', sans-serif;
 
 //mixins
 @mixin page {
+    background-color: $white;
     min-height: 100vh;
     min-height: 100dvh;
     padding: 1rem;
