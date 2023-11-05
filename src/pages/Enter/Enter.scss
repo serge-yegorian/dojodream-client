@@ -105,7 +105,7 @@
         padding: 0 2rem;
         text-decoration: none;
         transition: .2s;
-        width: 15rem;
+        width: 100%;
     }
 
     &__button--secondary:hover {
@@ -115,6 +115,7 @@
 
     &__button--cta {
         @include cta;
+        width: 100%;
     }
 
     &__button--cta:hover {
