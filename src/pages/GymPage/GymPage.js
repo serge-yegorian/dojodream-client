@@ -129,7 +129,8 @@ const GymPage = () => {
     }
     
 
-    return( gymData ? 
+    return( gymData ?
+        <>
         <section className='gym'>
             <div className='gym__data'>
                 <div className='gym__top'>
@@ -200,9 +201,11 @@ const GymPage = () => {
             {/* <nav className='gym__nav'>
                 <button onClick={()=>{navigate(-1)}} type='button' className='gym__button gym__button--secondary'>Back</button>
             </nav> */}
-            <ToastContainer/>
-        </section> : ''
+        </section>
+        <ToastContainer/>
+        </>: ''
         
-    )}
+        
+        )}
 
 export default GymPage;

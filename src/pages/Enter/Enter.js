@@ -147,6 +147,7 @@ const Enter = () => {
 
     
     return (
+        <>
         <form className='enter' ref={formRef} onSubmit={state ? register : login}>
             <div className='enter__top'>
                 <h1 className='enter__title'>dojodream</h1>
@@ -162,11 +163,11 @@ const Enter = () => {
                     <button className='enter__button enter__button--cta' type='submit'>{state ? 'Register' : 'Log in'}</button>
                     <button className='enter__button enter__button--secondary' type='button' onClick={() => {navigate(-1)}}>Back</button>
             </div>
-            <div className='enter__footer'>
-                {state ? <p className='enter__description-footer'>Already registered? <span onClick={toggleState} className='enter__link'>Log in!</span></p>: <p className='enter__description-footer'>Don't have an account? <span onClick={toggleState} className='enter__link'>Register!</span></p>}
-            </div>
-            <ToastContainer/>
+            {state ? <p className='enter__description-footer'>Already registered? <span onClick={toggleState} className='enter__link'>Log in!</span></p>: <p className='enter__description-footer'>Don't have an account? <span onClick={toggleState} className='enter__link'>Register!</span></p>}
+            
         </form>
+        <ToastContainer/>
+        </>
     );
 }
 
