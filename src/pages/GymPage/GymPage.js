@@ -133,10 +133,10 @@ const GymPage = () => {
         <section className='gym'>
             <div className='gym__data'>
                 <div className='gym__top'>
-                    <img alt="background" className='gym__background' src={gymData.background? gymData.background.url : require('../../assets/images/square.jpeg')}/>
+                    <img alt="background" className='gym__background' src={gymData.background? gymData.background.secure_url : require('../../assets/images/square.jpeg')}/>
                     <div className='gym__absolute'>
                         <div className='gym__middle'>
-                            <div className='gym__logo' style={{ backgroundImage: `url(${gymData.logo? gymData.logo.url : '../../assets/images/logo-type.png'})` }}></div>
+                            <div className='gym__logo' style={{ backgroundImage: `url(${gymData.logo? gymData.logo.secure_url : '../../assets/images/logo-type.png'})` }}></div>
                         </div>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ const GymPage = () => {
                         </a>
                         <p className='gym__description'>{gymData.bio}</p>
                         {gymData.schedule && <button type='button' onClick={toggleSchedule} className='gym__show-schedule'>Schedule</button>}
-                        {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.url} /></div>}
+                        {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.secure_url} /></div>}
                         <button className='gym__button gym__button--cta' onClick={toggleChoices}>Edit Gym</button>
                     </div>
                     { gymData.insta || gymData.facebook || gymData.website ?

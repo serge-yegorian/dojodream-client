@@ -53,7 +53,7 @@ const Gyms = () => {
                 {gyms.map((gym) => (
                   <section key={gym._id} className='gymCard' onClick={()=>{navigate(`/gyms/${gym._id}`)}}>
                     <div className='gymCard__content'>
-                      <img alt="gym logo"className='gymCard__image' src={gym.logo ? gym.logo.url : require('../../assets/images/square.jpeg')}/>
+                      <img alt="gym logo"className='gymCard__image' src={gym.logo ? gym.logo.secure_url : require('../../assets/images/square.jpeg')}/>
                       <div className='gymCard__bottom'>
                           <h1 className='gymCard__heading'>{gym.name}</h1>
                       </div>
