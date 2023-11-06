@@ -57,6 +57,9 @@ const GymPage = () => {
         } else {
             cta.textContent = 'Edit Gym';
         }
+
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
     }
 
     const toggleSchedule = (e) => {
@@ -150,10 +153,10 @@ const GymPage = () => {
                             <p className='gym__description gym__description--address'>{`${gymData.state} ${gymData.zip}`} <span className='gym__icon'><FiCopy/></span></p>
                         </div>
                         <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
-                            Drop in: <span className='gym__dynamic-price'>$25</span> 
+                            Drop in: <span className='gym__dynamic-price'>{`$` + gymData.dropin}</span> 
                         </a>
                         <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
-                            Membership from: <span className='gym__dynamic-price'>$100/month</span> 
+                            Membership from: <span className='gym__dynamic-price'>{`$` + gymData.membership}/{gymData.period}</span> 
                         </a>
                         <p className='gym__description'>{gymData.bio}</p>
                         {gymData.schedule && <button type='button' onClick={toggleSchedule} className='gym__show-schedule'>Schedule</button>}
@@ -195,6 +198,7 @@ const GymPage = () => {
                     <p className='gym__choice' onClick={() => navigate(`/addimages/${gymAddress}`)}>Logo, Background, Schedule</p>
                     <p className='gym__choice' onClick={() => navigate(`/editaddress/${gymAddress}`)}>Address</p>
                     <p className='gym__choice' onClick={() => navigate(`/addlinks/${gymAddress}`)}>Social Media Links</p>
+                    <p className='gym__choice' onClick={toggleChoices}>Close</p>
                     {/* <p className='gym__choice'onClick={() => navigate(`/addcoaches/${gymAddress}`)}>Coaches</p> */}
                 </div>
             

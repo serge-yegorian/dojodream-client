@@ -169,7 +169,7 @@
         visibility: hidden;
         opacity: 0;
         background-color: hsla(0, 0%, 100%, 0.8);
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         transition: 0.2s;
@@ -177,9 +177,8 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        padding: 1rem;
+        padding: 2rem;
         justify-content: flex-end;
-        padding-bottom: 5rem;
     }
 
     &__choice {
@@ -193,6 +192,7 @@
         cursor: pointer;
         transition: 0.2s;
         border: 2px solid $backgroundHtml;
+        font-family: 'Numbers', sans-serif;
     }
 
     &__choice:hover {
@@ -200,6 +200,11 @@
         background-color: $text;
         border: 2px solid $backgroundHtml;
 
+    }
+
+    &__choice:last-of-type {
+        margin-top: 2rem;
+       
     }
     
     &__choices--display {

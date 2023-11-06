@@ -76,6 +76,12 @@
         font-family: 'NuberNext', sans-serif;
     }
 
+    &__input--select {
+        width: fit-content;
+        border: 2px solid black !important;
+        font-size: 1rem;
+    }
+
     &__buttons {
         padding: 1rem;
         background-color: $backgroundHtml;

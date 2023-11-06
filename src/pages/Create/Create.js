@@ -70,6 +70,9 @@ const Create = () => {
         city: '',
         state: '',
         zip: '',
+        membership: '',
+        period: '',
+        dropin: '',
     })
 
     return (
@@ -122,9 +125,28 @@ const Create = () => {
                                 <label className='create__label' htmlFor='zip'>Zip:</label>
                             </div>
                         </div>
+                        
                     </div>
-
                 </div>
+                <div className='create__container'>
+                    <div className='create__input-div'>
+                        <input required type='number' className='create__input' name='membership' id='membership' placeholder='200' onChange={handleChange}/>
+                        <label className='create__label' htmlFor='membership'>Membership starts at:</label>
+                    </div>
+                    <select name="period" id="period" className='create__input create__input--select' onChange={handleChange}>
+                        <option value="week">/week</option>
+                        <option value="biweekly">/bi-weekly</option>
+                        <option value="month" selected>/month</option>
+                        <option value="year">/year</option>
+                    </select>
+                </div>
+                <div className='create__container'>
+                    <div className='create__input-div'>
+                        <input required className='create__input' name='dropin' id='dropin' placeholder='25' onChange={handleChange}/>
+                        <label className='create__label' htmlFor='dropin'>Drop in:</label>
+                    </div>
+                </div>
+                        
                 <button className='create__button create__button--cta' type='submit'>Add</button>
                     <button className='create__button create__button--secondary' type='button' onClick={()=>{navigate(-1)}}>Back</button>
             </div>

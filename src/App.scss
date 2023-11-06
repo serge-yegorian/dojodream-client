@@ -25,9 +25,10 @@ main {
         border: 2px solid $black;
         box-shadow: 0 0 10px $black;
         border-radius: 8px;
-    }
-    max-height: calc(100dvh - 2rem);
+        max-height: calc(100dvh - 2rem);
     overflow-y: auto;
     margin: 1rem auto;
     max-width: 481px;
+    }
+    
 }
