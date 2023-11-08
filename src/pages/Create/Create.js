@@ -71,7 +71,7 @@ const Create = () => {
         state: '',
         zip: '',
         membership: '',
-        period: '',
+        period: '/month',
         dropin: '',
     })
 

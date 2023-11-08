@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './GymPage.scss';
 
-import { BsInstagram } from "react-icons/bs";
 import { FiCopy } from "react-icons/fi";
 import { VscLinkExternal } from "react-icons/vsc";
 import { ToastContainer, toast } from 'react-toastify';
@@ -45,6 +44,8 @@ const GymPage = () => {
 
     
     const toggleChoices = () => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+
         const cta = document.querySelector('.gym__button--cta');
         const choices = document.querySelector('.gym__choices');
         const data = document.querySelector('.gym__data');
@@ -58,21 +59,9 @@ const GymPage = () => {
             cta.textContent = 'Edit Gym';
         }
 
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 
     }
 
-    const toggleSchedule = (e) => {
-        e.preventDefault()
-        const cta = document.querySelector('.gym__show-schedule')
-        const schedule = document.querySelector('.gym__schedule')
-        const imageDiv = document.querySelector('.gym__image-div')
-
-        schedule.classList.toggle('gym__schedule--open')
-        cta.classList.toggle('gym__show-schedule--active')
-        imageDiv.classList.toggle('gym__image-div--active')
-
-    }
 
     const toggleIcon = (e) => {
         e.preventDefault();
@@ -152,24 +141,26 @@ const GymPage = () => {
                             <p className='gym__description gym__description--address'>{`${gymData.city},`}</p>
                             <p className='gym__description gym__description--address'>{`${gymData.state} ${gymData.zip}`} <span className='gym__icon'><FiCopy/></span></p>
                         </div>
-                        <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
-                            Drop in: <span className='gym__dynamic-price'>{`$` + gymData.dropin}</span> 
-                        </a>
-                        <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
-                            Membership from: <span className='gym__dynamic-price'>{`$` + gymData.membership}/{gymData.period}</span> 
-                        </a>
+                        <div className='gym__prices'>
+                            <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
+                                Drop in: <span className='gym__dynamic-price'>{`$` + gymData.dropin}</span> 
+                            </a>
+                            <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
+                                Membership from: <span className='gym__dynamic-price'>{`$` + gymData.membership}/{gymData.period}</span> 
+                            </a>
+                        </div>
                         <p className='gym__description'>{gymData.bio}</p>
-                        {gymData.schedule && <button type='button' onClick={toggleSchedule} className='gym__show-schedule'>Schedule</button>}
-                        {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.secure_url} /></div>}
+                        {gymData.schedule && <a href={gymData.schedule.secure_url} target='_blank' type='button' className='gym__show-schedule'>Schedule <VscLinkExternal className='gym__schedule-icon'/></a>}
+                        {/* {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.secure_url} /></div>} */}
                         <button className='gym__button gym__button--cta' onClick={toggleChoices}>Edit Gym</button>
                     </div>
                     { gymData.insta || gymData.facebook || gymData.website ?
                         <div className='gym__media'>
-                        <h3 className='gym__subheading gym__subheading--contact'>Contact:</h3>
+                        {/* <h3 className='gym__subheading gym__subheading--contact'>Contact:</h3> */}
                         <div className='gym__media-content'>
-                            <div className='gym__button--regular' onClick={copyAddress}>Share URL</div>
+                            {/* <div className='gym__button--regular' onClick={copyAddress}>Share URL</div> */}
                             <div className='gym__media-icons'>
-                                {gymData.website && <a href={gymData.website} target="_blank" className="gym__website"><img alt="insta" className='gym__media-icon' src={require('../../assets/images/website.png')}/></a>}
+                                {gymData.website && <a href={gymData.website} target="_blank" className="gym__media-link"><img alt="website" className='gym__media-icon' src={require('../../assets/images/website.png')}/></a>}
                                 {gymData.insta && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="insta" className='gym__media-icon' src={require('../../assets/images/insta.png')}/></a>}
                                 {gymData.facebook && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="facebook" className='gym__media-icon' src={require('../../assets/images/facebook.png')}/></a>}
                                 {gymData.smoothcomp && <a href={gymData.smoothcomp} target="_blank" className="gym__media-link"><img alt="smoothcomp" className='gym__media-icon' src={require('../../assets/images/smoothcomp.png')}/></a>}

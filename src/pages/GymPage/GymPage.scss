@@ -228,10 +228,6 @@
         position: relative;
     }
 
-    &__image-div--active {
-        margin-bottom: 18rem;
-    }
-
     &__schedule {
         width: 100%;
         margin-top: 1rem;
@@ -247,6 +243,7 @@
         visibility: visible;
         opacity: 1;
         transform: translateX(0px);
+        position: relative
     }
 
     &__show-schedule {
@@ -339,6 +336,15 @@
         color: $secondary;
     }
 
+    &__schedule-icon {
+        margin-left: 0.5rem;
+    }
+
+    &__prices {
+        display: flex;
+        gap: 1rem;
+    }
+
     &__icon {
         transition: 0.2s;
         visibility: hidden;
@@ -357,7 +363,9 @@
 
     &__media-link {
         padding: 0.5rem;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-right: 0.5rem;
     }
 
