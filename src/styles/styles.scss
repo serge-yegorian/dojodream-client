@@ -25,12 +25,13 @@ $font: 'NuberNext', sans-serif;
     @include tablet {
         min-height: calc(100vh - 2rem - 4px);
         min-height: calc(100dvh - 2rem - 4px);
+        padding: 2rem;
     }
 }
 
 @mixin title {
     color: white;
-    text-shadow: 3px 3px $black;
+    text-shadow: 3px 3px gray;
     font-family: $font;
     font-size: 1.8rem;
     margin-bottom: 4rem;
@@ -41,7 +42,7 @@ $font: 'NuberNext', sans-serif;
     color: $black;
     font-family: $font;
     color: $black;
-    text-shadow: 3px 3px $secondaryhov;
+    text-shadow: 3px 3px gray;
 }
 
 @mixin subheading {
@@ -87,10 +88,9 @@ $font: 'NuberNext', sans-serif;
 
 @mixin cta {
         align-items: center;
-        background-color: #ffac59;
-        border: 2px solid #ffac59;
-        border-radius: 4px;
-        color: #22252a;
+        background-color: transparent;
+        border: 2px solid $white;
+        color:$white;
         cursor: pointer;
         display: flex;
         font-family: 'NuberNext',sans-serif;
@@ -107,8 +107,9 @@ $font: 'NuberNext', sans-serif;
 }
 
 @mixin ctaHover {
-    background-color: $secondary;
-    border: 2px solid $secondary;
+    background-color: white;
+    border: 2px solid white;
+    color: black;
 }
 
 @mixin link {

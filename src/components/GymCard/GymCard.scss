@@ -8,7 +8,7 @@
     &__image {
         width: 100%;
         transition: 0.2s;
-        border-radius: 4px;
+        vertical-align: bottom
     }
 
     &__heading {
@@ -42,8 +42,7 @@
     }
 
     &__content:hover &__image {
-        filter: blur(1px);
-        filter: grayscale(30%);
+        filter:brightness(1.2)
     }
 
 }

@@ -12,7 +12,7 @@
 }
 
 html {
-    background-color: $primaryHover;
+    background-color: $black;
 }
 
 body {
@@ -24,7 +24,7 @@ main {
     @include tablet {
         border: 2px solid $black;
         box-shadow: 0 0 10px $black;
-        border-radius: 8px;
+        border-radius: 2rem;
         max-height: calc(100dvh - 2rem);
         overflow-y: auto;
         margin: 1rem auto;

@@ -1,8 +1,15 @@
 import './Landing.scss';
 import { BiLinkExternal } from "react-icons/bi";
+import { useEffect } from 'react';
 
 
 const Landing = () => {
+
+    useEffect(() => {
+        const main = document.querySelector('main')
+        main.style.display = 'none';
+    }, []);
+
     return (
         <>
         <section className='landing'>
@@ -13,12 +20,13 @@ const Landing = () => {
                 <div className='landing__bottom'>
                 <img alt='ninja' className='landing__image' src={require('../../assets/images/mainlogo.png')}/>
                         <h2 className='landing__heading landing__heading--main'> Find a dream dojo</h2>
-                        <p className='landing__description'>Find martial arts gyms around you within one click. Learn about gym's senseis, schedule, membership cost and more...</p>
+                        <p className='landing__description landing__description--main'>Find martial arts gyms around you within one click. Learn about gym's senseis, schedule, membership cost and more...</p>
                         {/* <p className='landing__description'>Team of designers and engineers made it possible to compare local dojos and find the best martial arts environment near you.</p> */}
                         <a href="/main" target="_blank" className='landing__cta'>Try dojodream  <BiLinkExternal/></a>
                 </div>
             </section>
-            <section className='landing__section landing__section--mission'>
+            <div className='landing__section--center'>
+            <section className='landing__section landing__section--mission '>
                 <h2 className='landing__heading'>Our Mission</h2>
                 <p className='landing__description'>We're the silent bridge, uniting ninjutsu seekers with enlightening dojos, helping warriors embrace their potential.</p>
                 <p className='landing__description'>For dojo senseis, we provide tools to expand their reach and make a mark on the world.</p>
@@ -70,9 +78,10 @@ const Landing = () => {
                     </div>
                 </div>
             </section>
+            </div>
             <section className='landing__section landing__section--cta'>
                 <h2 className='landing__heading landing__heading--main'> Get started</h2>
-                <p className='landing__description'>Search for dojos in your local area. Contact the gym and start your journey in martial arts.<br/><br/>
+                <p className='landing__description landing__description--main'>Search for dojos in your local area. Contact the gym and start your journey in martial arts.<br/><br/>
                 Find new students by registering your gym on the app. Support the community together with us!</p>
                 <a href="/main" target="_blank" className='landing__cta'>Try dojodream <BiLinkExternal/></a>
             </section>

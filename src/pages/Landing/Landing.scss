@@ -2,7 +2,7 @@
 
 .landing {
     padding: 0.5rem;
-    background-color: $primaryHover;
+    background-color: $black;
     @include tablet {
         padding: 2rem
     }
@@ -41,8 +41,19 @@
         }
     }
 
+    &__section--center {
+        border-radius: 1rem;
+        box-shadow: 0 0 5px white;
+        padding: 0;
+        @include tablet {
+            border-radius: 4rem;
+            box-shadow: 0 0 10px white;
+        }
+        
+    }
+
     &__section--main {
-        background-color: $primaryHover;
+        background-color: $black;
         border-top: none;
         padding: 1rem;
         
@@ -62,7 +73,8 @@
     }
 
     &__section--cta {
-        background-color: $primaryHover;
+        margin-top: 1rem;
+        background-color: $black;
         border-top: none;
         @include tablet {
 
@@ -84,6 +96,7 @@
     &__heading {
         @include heading;
         margin-bottom: 2rem;
+        text-shadow: 3px 3px gray;
         @include tablet {
             margin-bottom: 2rem;
             text-align: center;
@@ -92,8 +105,8 @@
     }
 
     &__heading--main {
-        color: $black;
-        text-shadow: 3px 3px $white;
+        color: $white;
+        text-shadow: 3px 3px gray;
         margin-bottom: 1rem;
         @include tablet {
             margin-bottom: 2rem;
@@ -172,8 +185,9 @@
         border-radius: 50%;
         width: 10rem;
         height: 10rem;
-        background-color: $secondaryhov;
+        background-color: lightgray;
         padding: 0;
+        box-shadow: 0 0 10px gray;
     }
 
     &__span {
@@ -197,6 +211,10 @@
         @include tablet {
             font-size: 1.4rem;
         }
+    }
+
+    &__description--main {
+        color: $white;
     }
 
     &__description--fact {

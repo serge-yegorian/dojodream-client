@@ -1,9 +1,10 @@
 import './Main.scss';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ZipContext } from '../../App';
 import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
+
     const { zip, setZip } = useContext(ZipContext);
     const [inputValue, setInputValue] = useState('');
     const navigate = useNavigate();

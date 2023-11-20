@@ -4,6 +4,9 @@
     @include page;
     padding: 0;
     position: relative;
+    @include tablet {
+        padding: 0;
+    }
 
     &__content {
         padding: 1rem;
