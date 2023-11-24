@@ -50,6 +50,7 @@ const Gyms = () => {
                     <h2 className='gyms__heading'>Gyms Near {zip}:</h2>
                 </div>
                 <div className='gyms__array'>
+                {gyms.length == 0 && <h2 className='gyms__description'>No gyms were found nearby...</h2>}
                 {gyms.map((gym) => (
                   <section key={gym._id} className='gymCard' onClick={()=>{navigate(`/gyms/${gym._id}`)}}>
                     <div className='gymCard__content'>

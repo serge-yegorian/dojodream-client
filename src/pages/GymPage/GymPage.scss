@@ -52,25 +52,12 @@
     }
 
     &__price {
-        border: 2px solid $primaryHover;
         margin-bottom: 1rem;
         width: fit-content;
-        padding: 0.5rem;
-        border-radius: 4px;
         cursor: pointer;
-        background-color: $primaryHover;
         transition: 0.2s;
         display: block;
         text-decoration: none;
-    }
-
-    &__price:hover {
-        background-color: $primary;
-        border: 2px solid$primary;
-    }
-
-    &__dynamic-price {
-        // color: $primaryHover;
     }
 
     &__middle {
@@ -88,6 +75,7 @@
         width: fit-content;
         margin-bottom: 1rem;
         font-size: 1.1rem;
+        line-height: 1.6rem;
     }
 
     &__description--address {
@@ -110,15 +98,16 @@
     &__button--cta {
         margin-top: 1rem;
         @include cta;
-        border: none;
-        transition: 0.2s;
-        width: fit-content;
+        padding: 0 1rem;
+        color: $text;
+        background-color: $secondaryhov;
+        border: 2px solid $secondaryhov;
+        color: $black;
         font-size: 1rem;
     }
 
     &__button--regular {
         @include cta;
-        width: fit-content;
         margin-top: 1rem;
     }
 
@@ -129,6 +118,7 @@
 
     &__button--cta:hover {
         background-color: $secondary;
+        border: 2px solid $secondary;
     }
 
     &__button--secondary {
@@ -251,7 +241,6 @@
 
     &__show-schedule {
         @include cta;
-        width: fit-content;
         padding: 0 1rem;
         color: $text;
         background-color: $secondaryhov;
@@ -350,9 +339,9 @@
 
     &__icon {
         transition: 0.2s;
-        visibility: hidden;
-        opacity: 0;
         margin-left: 0.5rem;
+        height: 100%;
+        font-size: 1.3rem;
     }
 
     &__icon--active {
@@ -389,6 +378,10 @@
         top: 5px;
         font-size: 1.6rem;
         margin-left: 3px;
+    }
+
+    &__heading-link {
+        text-decoration: none;
     }
 
 

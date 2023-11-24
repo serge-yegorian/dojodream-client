@@ -23,5 +23,14 @@
 
     &__top {
         margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    &__array {
+        padding: 1rem;
+    }
+
+    &__description {
+        @include description
     }
 }

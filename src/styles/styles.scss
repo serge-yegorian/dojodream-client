@@ -1,8 +1,8 @@
 //variables
-$primary:  hsla(220, 50%, 50%, 1);
-$primaryHover: rgb(105, 155, 255);
-$secondary: hsla(30, 50%, 50%, 1);
-$secondaryhov: rgb(255, 172, 89);
+$primary:  rgb(93, 93, 93);
+$primaryHover: rgb(79, 79, 79);
+$secondary: #00FF00;
+$secondaryhov: #00d800;
 $accent: hsla(0, 70%, 50%, 1);
 $background: hsla(220, 10%, 15%, 1);
 $black: hsla(220, 10%, 15%, 1);
@@ -89,8 +89,8 @@ $font: 'NuberNext', sans-serif;
 @mixin cta {
         align-items: center;
         background-color: transparent;
-        border: 2px solid $white;
-        color:$white;
+        border: 2px solid $secondaryhov;
+        color:$secondaryhov;
         cursor: pointer;
         display: flex;
         font-family: 'NuberNext',sans-serif;
@@ -102,14 +102,12 @@ $font: 'NuberNext', sans-serif;
         text-decoration: none;
         transition: .2s;
         width: 15rem;
-    
-    
 }
 
 @mixin ctaHover {
-    background-color: white;
-    border: 2px solid white;
-    color: black;
+    background-color: $secondary;
+    border: 2px solid $secondary;
+    color: $black;
 }
 
 @mixin link {

@@ -6,6 +6,7 @@ import './GymPage.scss';
 import { FiCopy } from "react-icons/fi";
 import { VscLinkExternal } from "react-icons/vsc";
 import { ToastContainer, toast } from 'react-toastify';
+import { CiEdit } from "react-icons/ci";
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -56,7 +57,7 @@ const GymPage = () => {
         if (choices.classList.contains('gym__choices--display')) {
             cta.textContent = 'View Gym';
         } else {
-            cta.textContent = 'Edit Gym';
+            cta.textContent = `Edit Gym`;
         }
 
 
@@ -135,7 +136,7 @@ const GymPage = () => {
                 </div>
                 <div className='gym__bottom'>
                     <div className='gym__content'>
-                    <h1 className='gym__title'>{gymData.name}</h1>
+                    <a href={gymData.website? gymData.website : ''} target="_blank" className="gym__heading-link"><h1 className='gym__title'>{gymData.name}</h1></a>
                         <div className='gym__address-div' onMouseEnter={toggleIcon} onMouseLeave={toggleIcon} onClick={copyAddress}>
                             <p className='gym__description gym__description--address'>{`${gymData.street},`}</p>
                             <p className='gym__description gym__description--address'>{`${gymData.city},`}</p>
@@ -146,21 +147,20 @@ const GymPage = () => {
                                 Drop in: <span className='gym__dynamic-price'>{`$` + gymData.dropin}</span> 
                             </a>
                             <a href={gymData.website ? gymData.website : '#'} className='gym__price' {...(gymData.website ? { target: '_blank' } : {})}>
-                                Membership from: <span className='gym__dynamic-price'>{`$` + gymData.membership}/{gymData.period}</span> 
+                                Membership from: <span className='gym__dynamic-price'>{`$` + gymData.membership}{gymData.period}</span> 
                             </a>
                         </div>
                         <p className='gym__description'>{gymData.bio}</p>
                         {gymData.schedule && <a href={gymData.schedule.secure_url} target='_blank' type='button' className='gym__show-schedule'>Schedule <VscLinkExternal className='gym__schedule-icon'/></a>}
                         {/* {gymData.schedule && <div className='gym__image-div'><img alt="schedule" className='gym__schedule' src={gymData.schedule.secure_url} /></div>} */}
-                        <button className='gym__button gym__button--cta' onClick={toggleChoices}>Edit Gym</button>
+                        <button className='gym__button gym__button--cta' onClick={toggleChoices}>Edit Gym <CiEdit className='gym__icon'/></button>
                     </div>
-                    { gymData.insta || gymData.facebook || gymData.website ?
+                    { gymData.insta || gymData.facebook || gymData.smoothcomp || gymData.tapology ?
                         <div className='gym__media'>
                         {/* <h3 className='gym__subheading gym__subheading--contact'>Contact:</h3> */}
                         <div className='gym__media-content'>
                             {/* <div className='gym__button--regular' onClick={copyAddress}>Share URL</div> */}
                             <div className='gym__media-icons'>
-                                {gymData.website && <a href={gymData.website} target="_blank" className="gym__media-link"><img alt="website" className='gym__media-icon' src={require('../../assets/images/website.png')}/></a>}
                                 {gymData.insta && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="insta" className='gym__media-icon' src={require('../../assets/images/insta.png')}/></a>}
                                 {gymData.facebook && <a href={gymData.insta} target="_blank" className="gym__media-link"><img alt="facebook" className='gym__media-icon' src={require('../../assets/images/facebook.png')}/></a>}
                                 {gymData.smoothcomp && <a href={gymData.smoothcomp} target="_blank" className="gym__media-link"><img alt="smoothcomp" className='gym__media-icon' src={require('../../assets/images/smoothcomp.png')}/></a>}

@@ -142,7 +142,7 @@ const Create = () => {
                 </div>
                 <div className='create__container'>
                     <div className='create__input-div'>
-                        <input required className='create__input' name='dropin' id='dropin' placeholder='25' onChange={handleChange}/>
+                        <input required type='number' className='create__input' name='dropin' id='dropin' placeholder='25' onChange={handleChange}/>
                         <label className='create__label' htmlFor='dropin'>Drop in:</label>
                     </div>
                 </div>

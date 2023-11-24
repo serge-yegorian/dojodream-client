@@ -15,16 +15,29 @@
     &__profile {
         font-size: 2.5rem;
         color: $black;
-        margin-right: 1rem;
         display: flex;
         align-items: center;
         transition: 0.2s;
         cursor: pointer;
         background-color: $secondaryhov;
-        border-radius: 50%;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
     }
 
-    &__profile:hover {
+    &__profile-link {
+        padding: 0 1rem;
+        cursor: pointer;
+        background-color: $secondaryhov;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        transition: 0.2s;
+    }
+
+    &__profile-link:hover {
+        background-color: $secondary;
+    }
+
+    &__profile-link:hover &__profile {
         background-color: $secondary;
     }
 
@@ -37,12 +50,12 @@
         width: 80%;
         border: none;
         outline: none;
-        padding-left: 0.5rem;
+        padding-left: 1rem;
         font-size: 1.2rem;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
         background-color: $text;
         transition: 0.2s;
+        text-align: center;
+        letter-spacing: 5px;
     }
 
     &__input:hover, &__input:focus {
